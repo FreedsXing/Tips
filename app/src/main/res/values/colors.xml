@@ -3,4 +3,19 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorMain">#03DAC5</color>
+
+
+    <!--背景色-->
+    <color name="colorBgF7">#F7F7F7</color>
+    <!--边框 线条-->
+    <color name="colorLineDialogDC">#999999</color>
+    <!--文字色 指disable、提示字符-->
+    <color name="colorText999">#999999</color>
+    <!--文字色-->
+    <color name="colorText666">#666666</color>
+    <!--文字色-->
+    <color name="colorText222">#222222</color>
+
 </resources>
