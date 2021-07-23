@@ -16,4 +16,6 @@
     <string name="fingerprint_sys_setting_page">设置中录入指纹</string>
     <string name="sys_pwd_recognition_success">系统密码识别成功</string>
     <string name="sys_pwd_recognition_failed">系统密码识别失败</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="First"
+        android:icon="@drawable/icon_home"
+        android:id="@+id/first">
+    </item>
+
+    <item
+        android:title="Second"
+        android:icon="@drawable/icon_news"
+        android:id="@+id/second">
+    </item>
+
+    <item
+        android:title="Third"
+        android:icon="@drawable/icon_advisor"
+        android:id="@+id/third">
+    </item>
+
+    <item
+        android:title="Four"
+        android:icon="@drawable/icon_myself"
+        android:id="@+id/four">
+    </item>
+    <item
+        android:title="Five"
+        android:icon="@drawable/icon_myself"
+        android:id="@+id/five">
+    </item>
+</menu>
