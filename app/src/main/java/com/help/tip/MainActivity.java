@@ -109,12 +109,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.tv_login_fingerprint:
+                mFingerGuideImg.setVisibility(View.VISIBLE);
+                mFingerGuideTxt.setVisibility(View.VISIBLE);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                    startFingerprintRecognition();
                 }
 
                 break;
+            case R.id.fingerprint_guide:
+
+            break;
             // set
             case R.id.fingerprint_recognition_sys_unlock:
                 startFingerprintRecognitionUnlockScreen();
@@ -134,7 +139,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              @Override
              public void onClick(View v) {
                  LogUtils.e("TAG", "----------setNegativeButton-------------");
+                 mFingerGuideImg.setVisibility(View.INVISIBLE);
+                 mFingerGuideTxt.setVisibility(View.INVISIBLE);
+
                  if (mFingerprintCore.isAuthenticating()) {
+
                      mFingerprintCore.cancelAuthenticate();
                      resetGuideViewState();
                  }
