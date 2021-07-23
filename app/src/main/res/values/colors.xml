@@ -7,6 +7,9 @@
     <color name="colorMain">#03DAC5</color>
 
 
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
     <!--背景色-->
     <color name="colorBgF7">#F7F7F7</color>
     <!--边框 线条-->

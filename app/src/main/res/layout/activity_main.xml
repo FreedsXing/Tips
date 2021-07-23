@@ -76,4 +76,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_login"></TextView>
 
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/fingerprint_guide"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_fingerprint"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/fingerprint_normal" />
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fingerprint_guide"
+        android:id="@+id/fingerprint_guide_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/fingerprint_recognition_guide_tip"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@id/fingerprint_guide" />
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fingerprint_guide_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/fingerprint_recognition_sys_unlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="测试密码" />
+
+        <Button
+            android:id="@+id/fingerprint_recognition_sys_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fingerprint_recognition_sys_unlock"
+            android:layout_marginTop="0dp"
+            android:text="@string/fingerprint_sys_setting_page" />
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
