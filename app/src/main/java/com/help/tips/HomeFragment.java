@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
 
 public class HomeFragment extends Fragment {
@@ -20,6 +22,15 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) view.findViewById(R.id.bmapView);
+
+
+
+        BaiduMapOptions options = new BaiduMapOptions();
+        options.mapType(BaiduMap.MAP_TYPE_SATELLITE);
+        ViewGroup viewGroup = (ViewGroup) view;
+        MapView mapView = new MapView(getActivity(), options);
+        ((ViewGroup) view).addView(mapView);
+
         return view;
     }
 
