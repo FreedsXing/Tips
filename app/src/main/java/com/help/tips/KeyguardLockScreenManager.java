@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import android.app.Activity;
 import android.app.KeyguardManager;

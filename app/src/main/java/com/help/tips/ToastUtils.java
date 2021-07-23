@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import android.text.TextUtils;
 import android.widget.Toast;

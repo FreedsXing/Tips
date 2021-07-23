@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

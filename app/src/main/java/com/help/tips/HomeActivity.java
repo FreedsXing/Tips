@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,6 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity {
 

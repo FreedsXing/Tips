@@ -1,10 +1,18 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light">
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <!--        <item name="custom_bg_color">@color/white</item>-->
+        <!--        <item name="custom_text_color">@color/black</item>-->
+        <!--        <item name="custom_baseline_color">@color/baseLineDay</item>-->
+        <!--        <item name="theme_color">@color/applyColor</item>-->
+        <!--        <item name="theme_secondary_color">@color/applySecondaryColor</item>-->
+        <!--        <item name="custom_diefu_color">@color/diefu_day</item>-->
     </style>
 
 

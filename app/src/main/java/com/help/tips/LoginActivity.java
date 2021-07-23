@@ -1,42 +1,17 @@
-package com.help.tip;
+package com.help.tips;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
-import androidx.fragment.app.FragmentManager;
 
-import android.Manifest;
 import android.content.Intent;
-import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
-import android.security.keystore.KeyGenParameterSpec;
-import android.security.keystore.KeyProperties;
 import android.view.View;
-import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
-import java.security.InvalidAlgorithmParameterException;
-import java.security.InvalidKeyException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
-import javax.xml.transform.sax.TemplatesHandler;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,7 +19,7 @@ import butterknife.ButterKnife;
 /**
  * @author Administrator
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.et_account)
     EditText etAccount;
@@ -100,10 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String accout = etAccount.getText().toString();
                 String pwd = etPwd.getText().toString();
                 if ("123".equals(accout) && "456".equals(pwd)){
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(MainActivity.this, "账号或密码失败", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "账号或密码失败", Toast.LENGTH_LONG).show();
                 }
                 break;
 
@@ -205,28 +180,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void onAuthenticateSuccess() {
             toastTipMsg(R.string.fingerprint_recognition_success);
            resetGuideViewState();
-            Toast.makeText(MainActivity.this, "---onAuthenticateSuccess---", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            Toast.makeText(LoginActivity.this, "---onAuthenticateSuccess---", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             startActivity(intent);
         }
 
         @Override
         public void onAuthenticateFailed(int helpId) {
-            Toast.makeText(MainActivity.this, "---onAuthenticateFailed---", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "---onAuthenticateFailed---", Toast.LENGTH_LONG).show();
               toastTipMsg(R.string.fingerprint_recognition_failed);
             mFingerGuideTxt.setText(R.string.fingerprint_recognition_failed);
         }
 
         @Override
         public void onAuthenticateError(int errMsgId) {
-            Toast.makeText(MainActivity.this, "---onAuthenticateError---", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "---onAuthenticateError---", Toast.LENGTH_LONG).show();
              resetGuideViewState();
            toastTipMsg(R.string.fingerprint_recognition_error);
         }
 
         @Override
         public void onStartAuthenticateResult(boolean isSuccess) {
-            Toast.makeText(MainActivity.this, "---onStartAuthenticateResult---", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "---onStartAuthenticateResult---", Toast.LENGTH_LONG).show();
         }
     };
 

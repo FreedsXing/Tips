@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import android.annotation.TargetApi;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.help.tip;
+package com.help.tips;
 
 import org.junit.Test;
 
