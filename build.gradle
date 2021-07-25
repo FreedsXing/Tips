@@ -20,6 +20,14 @@ allprojects {
     }
 }
 
+this.getRootPro();
+def getRootPro(){
+    def name = this.getRootProject().name;
+    println "this is project name = " + name
+}
+
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
