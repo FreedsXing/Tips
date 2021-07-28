@@ -1,18 +1,20 @@
 package com.help.tips;
 
 import android.os.Bundle;
-
-import androidx.appcompat.widget.DialogTitle;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
 
+
+/**
+ * @author Administrator
+ */
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
@@ -25,7 +27,6 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) view.findViewById(R.id.bmapView);
-
 
         LogUtils.e(TAG + "---onCreateView---");
 

@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class LogUtils {
 
-    private static boolean LOGING = false;
+    private static boolean LOGING = true;
 
     private static String TAG = "TAG";
 

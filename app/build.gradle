@@ -45,7 +45,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.androidx_constraintlayout_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:$rootProject.ext.junit_version"
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
@@ -56,5 +57,9 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butter_knife_version"
 
     implementation files('libs/BaiduLBS_Android.jar')
+
+    compile 'com.orhanobut:logger:1.8'
+
+    implementation files('libs/lite-orm-1.7.0.jar')
 
 }
