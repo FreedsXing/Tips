@@ -99,6 +99,7 @@ public class StepService extends Service implements SensorEventListener {
     public void onCreate() {
         super.onCreate();
         LogUtils.e("TAG", TAG + "---onCreate---");
+        LogUtils.e("TAG", TAG + "---onCreate---");
         initNotification();
         initTodayData();
         initBroadcastReceiver();
