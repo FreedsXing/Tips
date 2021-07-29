@@ -21,6 +21,7 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
 import com.help.tips.HomeActivity;
+import com.help.tips.LogUtils;
 import com.help.tips.R;
 import com.help.tips.step.step.UpdateUiCallBack;
 import com.help.tips.step.step.accelerometer.StepCount;
@@ -97,7 +98,8 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate()");
+        LogUtils.e("TAG", TAG + "---onCreate---");
+
         initNotification();
         initTodayData();
         initBroadcastReceiver();
@@ -349,6 +351,7 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public IBinder onBind(Intent intent) {
+        LogUtils.e("TAG", TAG + "---onBind---");
         return stepBinder;
     }
 
@@ -383,6 +386,7 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        LogUtils.e("TAG", TAG + "---onStartCommand---");
         return START_STICKY;
     }
 
@@ -555,6 +559,8 @@ public class StepService extends Service implements SensorEventListener {
     public void onDestroy() {
         super.onDestroy();
         //取消前台进程
+        LogUtils.e("TAG", TAG + "---onDestroy---");
+
         stopForeground(true);
         DbUtils.closeDb();
         unregisterReceiver(mBatInfoReceiver);
@@ -563,6 +569,8 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public boolean onUnbind(Intent intent) {
+        LogUtils.e("TAG", TAG + "---onUnbind---");
+
         return super.onUnbind(intent);
     }
 }

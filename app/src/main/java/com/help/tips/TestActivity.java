@@ -1,24 +1,22 @@
 package com.help.tips;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
 
 import com.help.tips.step.step.UpdateUiCallBack;
 import com.help.tips.step.step.utils.SharedPreferencesUtils;
 
-public class SecondFragment extends Fragment implements View.OnClickListener {
+public class TestActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "SecondFragment";
+    private static final String TAG = "TestActivity";
 
     private TextView tv_data;
     private StepArcView cc;
@@ -26,30 +24,38 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     private TextView tv_isSupport;
     private SharedPreferencesUtils sp;
 
+    private boolean isBind = false;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_test);
 
         LogUtils.e(TAG + "---onCreateView---");
 
-        tv_data = (TextView) view.findViewById(R.id.tv_data);
-        cc = (StepArcView) view.findViewById(R.id.cc);
-        tv_set = (TextView) view.findViewById(R.id.tv_set);
-        tv_isSupport = (TextView) view.findViewById(R.id.tv_isSupport);
+        tv_data = (TextView) findViewById(R.id.tv_data);
+        cc = (StepArcView) findViewById(R.id.cc);
+        tv_set = (TextView) findViewById(R.id.tv_set);
+        tv_isSupport = (TextView) findViewById(R.id.tv_isSupport);
 
-        initData();
-        addListener();
-        return view;
+        sp = new SharedPreferencesUtils(this);
+        //获取用户设置的计划锻炼步数，没有设置过的话默认7000
+        String planWalk_QTY = (String) sp.getParam("planWalk_QTY", "7000");
+        //设置当前步数为0
+        cc.setCurrentCount(Integer.parseInt(planWalk_QTY), 0);
+        tv_isSupport.setText("计步中...");
+        setupService();
+
+        tv_set.setOnClickListener(this);
+        tv_data.setOnClickListener(this);
     }
 
+
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    protected void onDestroy() {
+        super.onDestroy();
         if (isBind) {
-            getActivity().unbindService(conn);
+            unbindService(conn);
         }
     }
 
@@ -57,40 +63,22 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_set:
-                startActivity(new Intent(getActivity(), SetPlanActivity.class));
+                startActivity(new Intent(this, SetPlanActivity.class));
                 break;
             case R.id.tv_data:
-                startActivity(new Intent(getActivity(), HistoryActivity.class));
+                startActivity(new Intent(this, HistoryActivity.class));
                 break;
         }
     }
-
-    private void addListener() {
-        tv_set.setOnClickListener(this);
-        tv_data.setOnClickListener(this);
-    }
-
-    private void initData() {
-
-        sp = new SharedPreferencesUtils(getActivity());
-        //获取用户设置的计划锻炼步数，没有设置过的话默认7000
-        String planWalk_QTY = (String) sp.getParam("planWalk_QTY", "7000");
-        //设置当前步数为0
-        cc.setCurrentCount(Integer.parseInt(planWalk_QTY), 0);
-        tv_isSupport.setText("计步中...");
-        setupService();
-    }
-
-    private boolean isBind = false;
 
     /**
      * 开启计步服务
      */
     private void setupService() {
-        Intent intent = new Intent(getActivity(), StepService.class);
-        isBind = getActivity().bindService(intent, conn, Context.BIND_AUTO_CREATE);
+        Intent intent = new Intent(this, StepService.class);
+        isBind = bindService(intent, conn, Context.BIND_AUTO_CREATE);
         LogUtils.e(TAG + "---setupService---");
-        getActivity().startService(intent);
+       startService(intent);
     }
 
     /**

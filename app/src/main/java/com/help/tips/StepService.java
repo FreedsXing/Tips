@@ -98,8 +98,7 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        LogUtils.e(TAG + "---onCreateView---");
-
+        LogUtils.e("TAG", TAG + "---onCreate---");
         initNotification();
         initTodayData();
         initBroadcastReceiver();
@@ -351,6 +350,7 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public IBinder onBind(Intent intent) {
+        LogUtils.e(TAG + "---onBind---");
         return stepBinder;
     }
 
@@ -380,11 +380,13 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public void onStart(Intent intent, int startId) {
+        LogUtils.e("TAG", TAG + "---onStart---");
         super.onStart(intent, startId);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        LogUtils.e("TAG", TAG + "---onStartCommand---");
         return START_STICKY;
     }
 
@@ -556,6 +558,7 @@ public class StepService extends Service implements SensorEventListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        LogUtils.e(TAG + "---onDestroy---");
         //取消前台进程
         stopForeground(true);
         DbUtils.closeDb();
@@ -565,6 +568,7 @@ public class StepService extends Service implements SensorEventListener {
 
     @Override
     public boolean onUnbind(Intent intent) {
+        LogUtils.e(TAG + "---onUnbind---");
         return super.onUnbind(intent);
     }
 }
