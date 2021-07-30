@@ -62,4 +62,7 @@ dependencies {
 
     implementation files('libs/lite-orm-1.7.0.jar')
 
+
+    implementation 'com.github.FreedsXing:FreedsUtil:a9810035a2'
+
 }
