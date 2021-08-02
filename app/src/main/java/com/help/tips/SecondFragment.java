@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import  com.freeds.toolutil.LogUtils;
 
 import androidx.fragment.app.Fragment;
 
@@ -33,7 +34,8 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_second, container, false);
 
-        LogUtils.e(TAG + "---onCreateView---");
+        LogUtils.e("---onCreateView---");
+
 
         tv_data = (TextView) view.findViewById(R.id.tv_data);
         cc = (StepArcView) view.findViewById(R.id.cc);

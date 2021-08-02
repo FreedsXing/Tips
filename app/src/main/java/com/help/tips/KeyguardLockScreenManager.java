@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
+import com.freeds.toolutil.LogUtils;
+
 
 public class KeyguardLockScreenManager {
     public final static int REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS = 0;

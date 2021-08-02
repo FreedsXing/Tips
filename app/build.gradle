@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+apply from: "${project.rootDir}/sign.properties"
+
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
@@ -14,13 +17,24 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        imrelease {
+            keyAlias project.ext.KEY_ALIS
+            keyPassword project.ext.KEY_PASSWORD
+            storeFile file(project.ext.STORE_FILE)
+            storePassword project.ext.STORE_PASSWORD
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.imrelease
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
+            signingConfig signingConfigs.imrelease
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -62,7 +76,5 @@ dependencies {
 
     implementation files('libs/lite-orm-1.7.0.jar')
 
-
-    implementation 'com.github.FreedsXing:FreedsUtil:a9810035a2'
-
+    implementation 'com.github.FreedsXing:FreedsUtil:1.0.2'
 }

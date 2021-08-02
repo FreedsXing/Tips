@@ -11,6 +11,7 @@ import android.os.IBinder;
 import android.view.View;
 import android.widget.TextView;
 
+import com.freeds.toolutil.LogUtils;
 import com.help.tips.step.step.UpdateUiCallBack;
 import com.help.tips.step.step.utils.SharedPreferencesUtils;
 

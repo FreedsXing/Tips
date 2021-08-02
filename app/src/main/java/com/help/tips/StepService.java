@@ -21,6 +21,7 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
+import com.freeds.toolutil.LogUtils;
 import com.help.tips.step.step.UpdateUiCallBack;
 import com.help.tips.step.step.accelerometer.StepCount;
 import com.help.tips.step.step.accelerometer.StepValuePassListener;

@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.freeds.toolutil.LogUtils;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

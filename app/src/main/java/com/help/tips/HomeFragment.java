@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
+import com.freeds.toolutil.LogUtils;
 
 
 /**
