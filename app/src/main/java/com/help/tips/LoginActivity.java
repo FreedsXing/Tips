@@ -14,6 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.second.step.FingerPrintDialog;
+import com.help.tips.second.step.FingerprintCore;
+import com.help.tips.second.step.FingerprintUtil;
+import com.help.tips.second.step.KeyguardLockScreenManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

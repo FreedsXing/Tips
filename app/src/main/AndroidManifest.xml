@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.help.tips">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- 访问网络，进行地图相关业务数据请求，包括地图数据，路线规划，POI检索等 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 读取外置存储。如果开发者使用了so动态加载功能并且把so文件放在了外置存储区域，则需要申请该权限，否则不需要 -->
@@ -34,13 +36,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <service
+            android:name=".second.step.StepCountService"
+            android:enabled="true"
+            android:exported="true"></service>
 
         <activity android:name=".HomeActivity">
             <intent-filter>
@@ -65,11 +64,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <service
-            android:name=".step.step.service.StepService"
+            android:name=".second.step.step.service.StepService"
             android:enabled="true"
             android:exported="true"
             android:priority="1000">
             <intent-filter>
+
                 <!-- 系统启动完成后会调用 -->
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.DATE_CHANGED" />
@@ -81,9 +81,9 @@
             </intent-filter>
         </service>
         <service
+            android:name=".second.step.pedometer.StepsDetectService"
             android:enabled="true"
             android:exported="true"
-            android:name=".step.pedometer.StepsDetectService"
             android:priority="1000"
             android:process="cn.bluemobi.dylan.step..pedometer.StepsDetectService">
             <intent-filter>

@@ -13,7 +13,8 @@ import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.help.tips.step.step.utils.SharedPreferencesUtils;
+import com.help.tips.R;
+import com.help.tips.second.step.step.utils.SharedPreferencesUtils;
 
 import java.text.DateFormat;
 import java.text.ParseException;

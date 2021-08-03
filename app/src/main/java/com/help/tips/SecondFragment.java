@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.LayoutInflater;
@@ -14,8 +15,11 @@ import  com.freeds.toolutil.LogUtils;
 
 import androidx.fragment.app.Fragment;
 
-import com.help.tips.step.step.UpdateUiCallBack;
-import com.help.tips.step.step.utils.SharedPreferencesUtils;
+
+import com.help.tips.second.step.step.UpdateUiCallBack;
+import com.help.tips.second.step.step.service.StepService;
+import com.help.tips.second.step.step.utils.SharedPreferencesUtils;
+import com.help.tips.second.step.view.StepArcView;
 
 public class SecondFragment extends Fragment implements View.OnClickListener {
 
@@ -36,7 +40,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
 
         LogUtils.e("---onCreateView---");
 
-
         tv_data = (TextView) view.findViewById(R.id.tv_data);
         cc = (StepArcView) view.findViewById(R.id.cc);
         tv_set = (TextView) view.findViewById(R.id.tv_set);
@@ -44,6 +47,14 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
 
         initData();
         addListener();
+
+
+        view.findViewById(R.id.tv_start_service).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupService();
+            }
+        });
         return view;
     }
 
@@ -80,7 +91,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
         //设置当前步数为0
         cc.setCurrentCount(Integer.parseInt(planWalk_QTY), 0);
         tv_isSupport.setText("计步中...");
-        setupService();
     }
 
     private boolean isBind = false;
@@ -92,7 +102,13 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
         Intent intent = new Intent(getActivity(), StepService.class);
         isBind = getActivity().bindService(intent, conn, Context.BIND_AUTO_CREATE);
         LogUtils.e(TAG + "---setupService---");
-        getActivity().startService(intent);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            //android8.0以上通过startForegroundService启动service
+            getActivity().startForegroundService(intent);
+        } else {
+            getActivity().startService(intent);
+        }
     }
 
     /**

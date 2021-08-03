@@ -13,10 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.help.tips.step.adapter.CommonAdapter;
-import com.help.tips.step.adapter.CommonViewHolder;
-import com.help.tips.step.step.bean.StepData;
-import com.help.tips.step.step.utils.DbUtils;
+import com.help.tips.R;
+import com.help.tips.second.step.adapter.CommonAdapter;
+import com.help.tips.second.step.adapter.CommonViewHolder;
+import com.help.tips.second.step.step.bean.StepData;
+import com.help.tips.second.step.step.utils.DbUtils;
 import com.orhanobut.logger.Logger;
 
 import java.util.List;
