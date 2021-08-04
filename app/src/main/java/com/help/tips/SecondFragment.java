@@ -21,6 +21,9 @@ import com.help.tips.second.step.step.service.StepService;
 import com.help.tips.second.step.step.utils.SharedPreferencesUtils;
 import com.help.tips.second.step.view.StepArcView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SecondFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "SecondFragment";
@@ -55,6 +58,16 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
                 setupService();
             }
         });
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");// HH:mm:ss
+        //获取当前时间
+        Date date = new Date(System.currentTimeMillis());
+        LogUtils.e("TAG" + "---Date获取当前日期时间---" + simpleDateFormat.format(date));
+
+
+
+
+
         return view;
     }
 

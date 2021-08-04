@@ -87,6 +87,5 @@
             android:layout_centerHorizontal="true"
             android:text="该设备支持计步"
             android:textColor="#333333" />
-
     </RelativeLayout>
 </RelativeLayout>
