@@ -1,10 +1,13 @@
 package com.help.tips;
 
+import android.annotation.TargetApi;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.os.Binder;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.LayoutInflater;
@@ -15,7 +18,6 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.freeds.toolutil.LogUtils;
-import com.help.tips.second.step.StepCountService;
 
 public class ThirdFragment extends Fragment implements View.OnClickListener {
 
@@ -53,6 +55,8 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         tvStartService.setOnClickListener(this::onClick);
 
          intent = new Intent(getActivity(), StepCountService.class);
+
+         LogUtils.e("TAG", TAG + "---onCreateView---" + isSupportStepCountSensor(getActivity()));
         return view;
     }
 
@@ -66,7 +70,7 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_start_service:
-                getActivity().bindService(intent, connection, Context.BIND_AUTO_CREATE);
+               getActivity().bindService(intent, connection, Context.BIND_AUTO_CREATE);
                 break;
             case R.id.tv_stop_service:
                 getActivity().unbindService(connection);
@@ -77,4 +81,20 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     }
 
 
+
+    /**
+     * 判断该设备是否支持计歩
+     *
+     * @param context
+     * @return
+     */
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public static boolean isSupportStepCountSensor(Context context) {
+
+        SensorManager sensorManager = (SensorManager) context
+                .getSystemService(context.SENSOR_SERVICE);
+        Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        Sensor detectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+        return countSensor != null || detectorSensor != null;
+    }
 }

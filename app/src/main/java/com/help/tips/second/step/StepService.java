@@ -155,7 +155,7 @@ public class StepService extends Service implements SensorEventListener {
         }
 
         // 【适配Android8.0】设置Notification的Channel_ID,否则不能正常显示
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             mBuilder.setChannelId("notification_id");
         }
 
@@ -277,7 +277,7 @@ public class StepService extends Service implements SensorEventListener {
         if (("1".equals(remind)) &&
                 (CURRENT_STEP < Integer.parseInt(plan)) &&
                 (time.equals(new SimpleDateFormat("HH:mm").format(new Date())))
-                ) {
+        ) {
             remindNotify();
         }
 

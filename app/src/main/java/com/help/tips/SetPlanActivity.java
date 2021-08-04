@@ -1,6 +1,10 @@
 package com.help.tips;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +16,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.help.tips.R;
 import com.help.tips.second.step.step.utils.SharedPreferencesUtils;

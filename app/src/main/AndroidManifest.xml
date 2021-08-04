@@ -37,7 +37,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".second.step.StepCountService"
+            android:name=".StepCountService"
             android:enabled="true"
             android:exported="true"></service>
 

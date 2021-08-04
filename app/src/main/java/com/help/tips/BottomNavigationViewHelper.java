@@ -23,15 +23,8 @@ public class BottomNavigationViewHelper {
             shiftingMode.setBoolean(menuView, false);
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
-//                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-//                //noinspection RestrictedApi
-//                // set once again checked value, so view will be updated
-//                //noinspection RestrictedApi
-//                item.setChecked(item.getItemData().isChecked());
-
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
                 //noinspection RestrictedApi
-                item.setShifting(false);
                 // set once again checked value, so view will be updated
                 //noinspection RestrictedApi
                 item.setChecked(item.getItemData().isChecked());
@@ -42,7 +35,4 @@ public class BottomNavigationViewHelper {
             Log.e("BNVHelper", "Unable to change value of shift mode", e);
         }
     }
-
-
-
 }
