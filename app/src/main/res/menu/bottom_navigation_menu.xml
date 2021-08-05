@@ -19,8 +19,8 @@
     </item>
 
     <item
-        android:title="搜索"
-        android:icon="@drawable/icon_myself"
+        android:title="发现"
+        android:icon="@drawable/icon_search"
         android:id="@+id/four">
     </item>
     <item

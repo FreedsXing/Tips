@@ -32,6 +32,7 @@
        tools:replace="android:icon"
         android:name=".base.AppAplication"
         android:allowBackup="true"
+        android:roundIcon="@drawable/ic_logo_round"
         android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"

@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         transaction.replace(R.id.framelayout, new HomeFragment());
         transaction.commitAllowingStateLoss();
 
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+       // BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

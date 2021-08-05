@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,8 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.freeds.toolutil.LogUtils;
+
+import org.w3c.dom.Text;
 
 public class ThirdFragment extends Fragment implements View.OnClickListener {
 
@@ -51,6 +56,8 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
 
 
     private StepCountService.ModelBinder modelBinder;
+
+    private String mContentCurrent = "";
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
@@ -123,6 +130,24 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         main_btnc.setOnClickListener(this);
         main_btn1d.setOnClickListener(this);
 
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                LogUtils.e("TAG" + "---addTextChangedListener---beforeTextChanged---s=" + s);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                LogUtils.e("TAG" + "---addTextChangedListener---onTextChanged---s=" + s + "---" + start + "---" + before + "---" + count);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                LogUtils.e("TAG" + "---addTextChangedListener---afterTextChanged---s=" + s);
+            }
+        });
+
         return view;
     }
 
@@ -132,11 +157,14 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         LogUtils.e("TAG", TAG + "---onCreateView---");
     }
 
+
     @Override
     public void onClick(View view) {
 
+        mContentCurrent = editText.getText().toString();
         //获取文本内容
-        String input = editText.getText().toString();
+        LogUtils.e("TAG", TAG + "---onClick---" + mContentCurrent);
+
         switch (view.getId()){
             case R.id.main_btn0:
             case R.id.main_btn1:
@@ -153,7 +181,7 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
                     clear_flag = false;
                     editText.setText("");//赋值为空
                 }
-                editText.setText(input + ((Button)view).getText());//结果集就为本身
+                editText.setText(mContentCurrent + ((Button)view).getText());//结果集就为本身
                 break;
             case R.id.main_btn1a:
             case R.id.main_btnj:
@@ -161,18 +189,18 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
             case R.id.main_btnc:
                 if(clear_flag){
                     clear_flag = false;
-                    input = "";
+                    mContentCurrent = "";
                     editText.setText("");
                 }
-                editText.setText(input + " " + ((Button)view).getText() + " ");
+                editText.setText(mContentCurrent + " " + ((Button)view).getText() + " ");
                 break;
             case R.id.main_btndel:
                 if(clear_flag){
                     clear_flag = false;
-                    input = "";
+                    mContentCurrent = "";
                     editText.setText("");
-                }else if(input != null || !input.equals("")) {//如果获取到的内容为空
-                    editText.setText(input.substring(0, input.length() - 1));//结果集为空
+                }else if(mContentCurrent != null || !mContentCurrent.equals("")) {//如果获取到的内容为空
+                    editText.setText(mContentCurrent.substring(0, mContentCurrent.length() - 1));//结果集为空
                 }
                 break;
             case R.id.main_btn1d://运算结果  =

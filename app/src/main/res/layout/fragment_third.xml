@@ -23,6 +23,7 @@
 
             <!--输入的文本框-->
             <EditText
+                android:digits="0123456789+-*?.="
                 android:id="@+id/main_et_result"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
