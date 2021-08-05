@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class FourthFragment extends Fragment {
+public class FourthFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "FourthFragment";
 
@@ -38,6 +39,11 @@ public class FourthFragment extends Fragment {
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_fourth, container, false);
         webView = mainView.findViewById(R.id.web);
+
+        TextView tvTitle = mainView.findViewById(R.id.tv_title);
+        tvTitle.setText("搜索");
+        mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
+
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -66,5 +72,10 @@ public class FourthFragment extends Fragment {
         });
 
         return mainView;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

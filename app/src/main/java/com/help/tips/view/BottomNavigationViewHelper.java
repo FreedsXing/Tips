@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.view;
 
 import android.annotation.SuppressLint;
 import android.util.Log;

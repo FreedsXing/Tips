@@ -20,13 +20,4 @@
     <color name="colorText666">#666666</color>
     <!--文字色-->
     <color name="colorText222">#222222</color>
-
-
-    <color name="yellow">#fd9c06</color>
-    <color name="red">#EE2C2C</color>
-    <color name="grey">#BDBDBD</color>
-    <color name="black">#000000</color>
-    <color name="color_one">#FDE4BB</color>
-    <color name="color_two">#FCD2A1</color>
-    <color name="color_three">#EF8273</color>
 </resources>

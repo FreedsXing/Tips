@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -28,6 +29,12 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mMapView = (MapView) view.findViewById(R.id.bmapView);
+
+        TextView tvTitle = view.findViewById(R.id.tv_title);
+        tvTitle.setText("地图");
+
+        view.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
+
 
         LogUtils.e(TAG + "---onCreateView---");
 

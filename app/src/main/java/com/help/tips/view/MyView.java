@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,6 +10,8 @@ import android.os.Message;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.help.tips.R;
 
 /**
  * Created by Freeds
@@ -223,8 +225,6 @@ import android.view.View;
         //mHandler.sendEmptyMessageAtTime(2,1000*60*60);
         canvas.rotate(mHour * 30 + mMinutes / 60 * 30, 0, 0);//其中mMinutes/60*30为时钟偏移的角度
         canvas.drawLine(0, 10, 0, -(radius - 90), mHourPaint);
-
-
     }
 
     /***
@@ -240,8 +240,6 @@ import android.view.View;
         //mHandler.sendEmptyMessage(1);
         canvas.rotate(mMinutes * 6, 0, 0);
         canvas.drawLine(0, 20, 0, -(radius - 70), mMinutesPaint);
-
-
     }
 
     /***

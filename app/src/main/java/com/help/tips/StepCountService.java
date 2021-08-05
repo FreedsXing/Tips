@@ -1,19 +1,11 @@
 package com.help.tips;
 
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.os.Binder;
 import android.os.IBinder;
 
-import androidx.core.app.NotificationCompat;
-
 import com.freeds.toolutil.LogUtils;
-import com.help.tips.HomeActivity;
-import com.help.tips.R;
-import com.help.tips.SetPlanActivity;
 
 /**
  * @author Administrator
@@ -54,7 +46,7 @@ public class StepCountService extends Service {
 //                .setContentText("context")
 //                .setWhen(System.currentTimeMillis())
 //                .setSmallIcon(R.drawable.ic_launcher_foreground)
-//                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+//                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.logo))
 //                .setContentIntent(pi)
 //                .build();
 //        startForeground(1, notification);

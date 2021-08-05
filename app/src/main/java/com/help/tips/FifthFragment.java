@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import com.freeds.toolutil.AppInforUtil;
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.activity.AboutUsActivity;
+import com.help.tips.base.BaseFragment;
+import com.help.tips.util.CacheDataManager;
 
 import java.io.File;
 
@@ -23,7 +26,6 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
 
     private View mainView;
 
-    private TextView tvTitle;
     private LinearLayout llTextSize;
     private LinearLayout llClearCache;
     private RelativeLayout llAppVersion;
@@ -37,9 +39,9 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_fifth, container, false);
 
-        tvTitle = mainView.findViewById(R.id.tv_title);
+        TextView tvTitle = mainView.findViewById(R.id.tv_title);
         tvTitle.setText("我");
-
+        mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 
         llTextSize = mainView.findViewById(R.id.ll_textSise);
         llClearCache = mainView.findViewById(R.id.ll_clear_cache);

@@ -1,17 +1,22 @@
-package com.help.tips;
+package com.help.tips.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.help.tips.view.BottomNavigationViewHelper;
+import com.help.tips.FifthFragment;
+import com.help.tips.FourthFragment;
+import com.help.tips.HomeFragment;
+import com.help.tips.R;
+import com.help.tips.SecondFragment;
+import com.help.tips.ThirdFragment;
 
 public class HomeActivity extends AppCompatActivity {
 

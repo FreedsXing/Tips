@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.base;
 
 import android.app.Application;
 import android.content.Context;

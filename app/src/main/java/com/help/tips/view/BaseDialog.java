@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.view;
 
 import android.app.Dialog;
 import android.content.Context;

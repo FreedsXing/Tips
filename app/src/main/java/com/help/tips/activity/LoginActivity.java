@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,10 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.freeds.toolutil.LogUtils;
-import com.help.tips.second.step.FingerPrintDialog;
-import com.help.tips.second.step.FingerprintCore;
-import com.help.tips.second.step.FingerprintUtil;
-import com.help.tips.second.step.KeyguardLockScreenManager;
+import com.help.tips.R;
+import com.help.tips.fingerprint.FingerPrintDialog;
+import com.help.tips.fingerprint.FingerprintCore;
+import com.help.tips.fingerprint.FingerprintUtil;
+import com.help.tips.fingerprint.KeyguardLockScreenManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,11 +29,11 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.et_account)
-    EditText etAccount;
+    public EditText etAccount;
     @BindView(R.id.et_pwd)
-    EditText etPwd;
+    public EditText etPwd;
     @BindView(R.id.tv_login)
-    TextView tvLogin;
+    public TextView tvLogin;
 
     @BindView(R.id.tv_login_fingerprint)
     TextView tvLoginFingerPrint;

@@ -1,10 +1,12 @@
-package com.help.tips;
+package com.help.tips.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.help.tips.R;
 
 public class AboutUsActivity extends AppCompatActivity implements View.OnClickListener {
 
