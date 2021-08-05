@@ -12,6 +12,7 @@
     </include>
 
     <LinearLayout
+        android:visibility="gone"
         android:background="@color/colorWhite"
         android:layout_marginTop="2dp"
         android:id="@+id/ll_textSise"

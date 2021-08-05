@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.freeds.toolutil.LogUtils;
+
 public class FourthFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "FourthFragment";
@@ -52,6 +54,7 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                LogUtils.e("TAG" + "---shouldOverrideUrlLoading---" + url);
                 view.loadUrl(url);
                 return super.shouldOverrideUrlLoading(view, url);
             }

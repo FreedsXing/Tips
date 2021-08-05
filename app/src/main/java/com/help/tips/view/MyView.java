@@ -20,7 +20,7 @@ import com.help.tips.R;
  public class MyView extends View {
 
     private static final int CIRCLE_COLOR = Color.RED;//颜色
-    private static final float CIRCLE_RADIUS = 200;//半径
+    private static final float CIRCLE_RADIUS = 400;//半径
     private static final int HANDLER_MSG = 0;
     private static final String BIAOPAN_LOGO = "icuihai";//表盘logo
 
@@ -99,7 +99,7 @@ import com.help.tips.R;
         mHourTextPaint = new Paint();
         mHourTextPaint.setStrokeWidth(2);
         mHourTextPaint.setAntiAlias(true);
-        mHourTextPaint.setTextSize(16);
+        mHourTextPaint.setTextSize(40);
         mHourTextPaint.setColor(Color.DKGRAY);
         mHourTextPaint.setTextAlign(Paint.Align.CENTER);//中心
         float textSize = (mHourTextPaint.getFontMetrics().bottom - mHourTextPaint.getFontMetrics().top);//文字高度
@@ -114,7 +114,6 @@ import com.help.tips.R;
                 canvas.drawText(String.valueOf(i), a, -b + textSize / 3, mHourTextPaint);
             }
         }
-
     }
 
     /**
@@ -126,7 +125,7 @@ import com.help.tips.R;
         mTimePaint.setAntiAlias(true);
         mTimePaint.setColor(Color.RED);
         mTimePaint.setStyle(Paint.Style.FILL);
-        mTimePaint.setTextSize(25);
+        mTimePaint.setTextSize(100);
         /**根据实际情况我们需要判断下时分秒的数字是不是小于10，如果是前面补一位0*/
         if (mSecond < 10) {
             replaceMsecond = "0" + String.valueOf(mSecond).replace(".0", "");
@@ -170,7 +169,7 @@ import com.help.tips.R;
         mLogoPaint.setAntiAlias(true);
         mLogoPaint.setStyle(Paint.Style.STROKE);
         mLogoPaint.setStrokeWidth(2);
-        mLogoPaint.setTextSize(20);
+        mLogoPaint.setTextSize(100);
         float width = mLogoPaint.measureText(BIAOPAN_LOGO);//字符串宽度
         canvas.drawText(BIAOPAN_LOGO, -width / 2, -radius / 5 * 2, mLogoPaint);
     }
@@ -182,7 +181,7 @@ import com.help.tips.R;
         //画刻度
         mDegreePaint = new Paint();
         mDegreePaint.setAntiAlias(true);
-        mDegreePaint.setStrokeWidth(2);
+        mDegreePaint.setStrokeWidth(4);
         int counts = 60;
         for (int i = 0; i < counts; i++) {
             if (i % 5 == 0) {
@@ -217,7 +216,7 @@ import com.help.tips.R;
      */
     private void hour(Canvas canvas) {
         mHourPaint = new Paint();
-        mHourPaint.setStrokeWidth(4);
+        mHourPaint.setStrokeWidth(6);
         mHourPaint.setAntiAlias(true);
         mHourPaint.setStyle(Paint.Style.FILL);
         mHourPaint.setColor(Color.RED);
@@ -232,7 +231,7 @@ import com.help.tips.R;
      */
     private void minutes(Canvas canvas) {
         mMinutesPaint = new Paint();
-        mMinutesPaint.setStrokeWidth(3);
+        mMinutesPaint.setStrokeWidth(5);
         mMinutesPaint.setAntiAlias(true);
         mMinutesPaint.setColor(Color.BLUE);
         mMinutesPaint.setStyle(Paint.Style.FILL);
@@ -248,7 +247,7 @@ import com.help.tips.R;
     private void second(Canvas canvas) {
         //画秒针
         mSecondPaint = new Paint();
-        mSecondPaint.setStrokeWidth(2);
+        mSecondPaint.setStrokeWidth(4);
         mSecondPaint.setAntiAlias(true);//设置抗锯齿
         mSecondPaint.setColor(Color.GREEN);
         mSecondPaint.setStyle(Paint.Style.FILL);

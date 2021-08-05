@@ -16,8 +16,8 @@
         android:lineHeight="22dp"
         android:textSize="@dimen/text_size_14sp"
         style="@style/normal_padding_left_right_16dp"
-        android:text="       Tips 是一款记录个人信息的工具软件, 包括地图、运动计步、时间、今日计划、搜索等功能。\n
-        其中，地图寓意Where我在哪，时间寓意When, 今日计划寓意What, 搜索寓意Why。运动计步嘛，就是想加，没寓意。哈哈哈哈"
+        android:text="       Tips 是一款记录个人信息的工具软件, 包括地图、时间、计算器、搜索等功能。\n
+        其中，地图寓意Where我在哪，时间寓意When, 计算器寓意What, 搜索寓意Why。运动计步嘛，就是想加，没寓意。哈哈哈哈，下一版再加吧，啊啊啊啊"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </TextView>
