@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -21,13 +22,16 @@ import com.freeds.toolutil.LogUtils;
 
 import org.w3c.dom.Text;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ThirdFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "ThirdFragment";
 
     Intent intent;
 
-    //    结果集
+    //结果集
     private EditText editText;
 
     //数字1-9
@@ -81,9 +85,7 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         tvTitle.setText("计算器");
         view.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 
-
          intent = new Intent(getActivity(), StepCountService.class);
-
 
         //数字1-9
         View main_btn1 = view.findViewById(R.id.main_btn1);
@@ -139,11 +141,18 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
                 LogUtils.e("TAG" + "---addTextChangedListener---onTextChanged---s=" + s + "---" + start + "---" + before + "---" + count);
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+//                if (!TextUtils.isEmpty(s) && s.length() > 1){
+//                    String temp = s.toString().substring(0, s.length() - 2);
+//                    if (temp.contains("+") || temp.contains("-") || temp.contains("*") || temp.contains("/") || temp.contains(".")){
+//                        editText.setText(s.toString().substring(0, s.length()-2));
+//                    }
+//                }
                 LogUtils.e("TAG" + "---addTextChangedListener---afterTextChanged---s=" + s);
             }
         });
@@ -210,7 +219,6 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
     //运算结果的方法
     private void getResult(){
         String exp = editText.getText().toString();//获取文本框的内容
@@ -234,6 +242,16 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         String op = exp.substring(exp.indexOf(" ")+1,exp.indexOf(" ")+2);
         //运算符后的数字
         String s2 = exp.substring(exp.indexOf(" ")+3);
+
+        if (!isNumeric(s1)){
+            Toast.makeText(getActivity(), "输入不合法", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!isNumeric(s2)){
+            Toast.makeText(getActivity(), "输入不合法", Toast.LENGTH_LONG).show();
+            return;
+        }
+
 
         if(!s1.equals("")&&!s2.equals("")) {//如果包含小数点的运算
             double d1 = Double.parseDouble(s1);//则数字都是double类型
@@ -285,5 +303,20 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
             editText.setText("");
         }
 
+    }
+
+
+    /**
+     * 利用正则表达式判断字符串是否是数字
+     * @param str
+     * @return
+     */
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        Matcher isNum = pattern.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        }
+        return true;
     }
 }
