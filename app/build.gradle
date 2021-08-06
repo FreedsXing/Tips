@@ -28,7 +28,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             signingConfig signingConfigs.imrelease
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -57,7 +57,7 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$rootProject.ext.androidx_appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.androidx_constraintlayout_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.ext.androidx_legacy_version"
 
     testImplementation "junit:junit:$rootProject.ext.junit_version"
 
@@ -72,7 +72,7 @@ dependencies {
 
     implementation files('libs/BaiduLBS_Android.jar')
 
-    compile 'com.orhanobut:logger:1.8'
+    implementation 'com.orhanobut:logger:1.8'
 
     implementation files('libs/lite-orm-1.7.0.jar')
 

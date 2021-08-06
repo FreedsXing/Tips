@@ -25,6 +25,7 @@
 -keep class vi.com.** {*;}
 -keep class com.baidu.vi.** {*;}
 -dontwarn com.baidu.**
+-keep class mapsdkvi.com.** {*;}
 
 -keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
     boolean mShiftingMode;
