@@ -266,7 +266,7 @@ import com.help.tips.R;
                     long time = System.currentTimeMillis();
                     mSecond = time / 1000 % 60;
                     mMinutes = (time / 1000 / 60 % 60);
-                    mHour = ((time / 1000 / 60 / 60 + 8) % 12);
+                    mHour = ((time / 1000 / 60 / 60 + 8) % 24);
                     break;
             }
         }
