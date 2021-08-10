@@ -16,8 +16,10 @@ import android.widget.Toast;
 import com.freeds.toolutil.AppInforUtil;
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.activity.AboutUsActivity;
+import com.help.tips.activity.LoginActivity;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.util.CacheDataManager;
+import com.help.tips.util.SharedPreferencesUtil;
 
 import java.io.File;
 
@@ -30,6 +32,7 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
     private LinearLayout llClearCache;
     private RelativeLayout llAppVersion;
     private LinearLayout llAboutUs;
+    private LinearLayout llLogout;
 
     private TextView tvCache;
     private TextView tvAppVersion;
@@ -47,14 +50,17 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
         llClearCache = mainView.findViewById(R.id.ll_clear_cache);
         llAppVersion = mainView.findViewById(R.id.ll_version);
         llAboutUs = mainView.findViewById(R.id.ll_about_us);
+        llLogout = mainView.findViewById(R.id.ll_login_out);
 
         tvCache = mainView.findViewById(R.id.tv_cache);
         tvAppVersion = mainView.findViewById(R.id.tv_app_version);
 
+        llLogout.setOnClickListener(this);
         llAboutUs.setOnClickListener(this);
         llAppVersion.setOnClickListener(this::onClick);
         llClearCache.setOnClickListener(this::onClick);
         llTextSize.setOnClickListener(this::onClick);
+
 
 
         String appVersion = AppInforUtil.getAppVersionName(getActivity());
@@ -91,6 +97,11 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
             case R.id.ll_about_us:
                 Intent intent = new Intent(getActivity(), AboutUsActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.ll_login_out:
+                SharedPreferencesUtil.putBoolean(getActivity(), "login", false);
+                Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

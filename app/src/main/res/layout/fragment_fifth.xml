@@ -144,4 +144,29 @@
             android:layout_height="match_parent">
         </TextView>
     </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/colorWhite"
+        android:layout_marginTop="2dp"
+        android:id="@+id/ll_login_out"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+        <ImageView
+            android:layout_marginStart="8dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/logo"
+            android:layout_width="24dp"
+            android:layout_height="24dp">
+        </ImageView>
+        <TextView
+            android:paddingStart="8dp"
+            android:gravity="center_vertical"
+            android:text="退出登录"
+            android:textColor="@color/colorText666"
+            android:textSize="@dimen/text_size_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </TextView>
+    </LinearLayout>
 </LinearLayout>

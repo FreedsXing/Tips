@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import com.help.tips.fingerprint.FingerPrintDialog;
 import com.help.tips.fingerprint.FingerprintCore;
 import com.help.tips.fingerprint.FingerprintUtil;
 import com.help.tips.fingerprint.KeyguardLockScreenManager;
+import com.help.tips.util.SharedPreferencesUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,6 +66,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.fingerprint_recognition_sys_unlock).setOnClickListener(this);
         findViewById(R.id.fingerprint_recognition_sys_setting).setOnClickListener(this);
 
+        String phone = SharedPreferencesUtil.getString(this, "phone", "");
+        etAccount.setText(phone);
+
+        String pwd = SharedPreferencesUtil.getString(this, "password", "");
+
+        boolean login = SharedPreferencesUtil.getBoolean(this, "login", false);
+        if (!TextUtils.isEmpty(phone) && !TextUtils.isEmpty(pwd) && login){
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+        }
+
         initFingerprintCore();
     }
 
@@ -81,12 +94,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.tv_login:
                 String accout = etAccount.getText().toString();
                 String pwd = etPwd.getText().toString();
-                if ("123".equals(accout) && "456".equals(pwd)){
+                String phone = SharedPreferencesUtil.getString(this, "phone", "");
+                if (TextUtils.isEmpty(phone)){
+                    SharedPreferencesUtil.putString(this, "phone", etAccount.getText().toString());
+                    SharedPreferencesUtil.putString(this, "password", etPwd.getText().toString());
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Toast.makeText(LoginActivity.this, "您已注册成功", Toast.LENGTH_LONG).show();
+                    SharedPreferencesUtil.putBoolean(this, "login", true);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(LoginActivity.this, "账号或密码失败", Toast.LENGTH_LONG).show();
+                    String pwdSave = SharedPreferencesUtil.getString(this, "password", "");
+                    if (pwdSave.equals(pwd) && accout.equals(SharedPreferencesUtil.getString(this, "phone", ""))){
+                        SharedPreferencesUtil.putString(this, "password", etPwd.getText().toString());
+                        SharedPreferencesUtil.putBoolean(this, "login", true);
+
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        Toast.makeText(LoginActivity.this, "您已登录成功", Toast.LENGTH_LONG).show();
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(LoginActivity.this, "账号或密码失败", Toast.LENGTH_LONG).show();
+                    }
                 }
+
                 break;
 
             case R.id.tv_login_fingerprint:
