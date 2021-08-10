@@ -17,15 +17,18 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "SecondFragment";
 
+    private View mainView;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        mainView = inflater.inflate(R.layout.fragment_second, container, false);
 
-        TextView tvTitle = view.findViewById(R.id.tv_title);
+        TextView tvTitle = mainView.findViewById(R.id.tv_title);
         tvTitle.setText("时间");
-        view.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
+        mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 
 
         LogUtils.e("---onCreateView---");
@@ -35,7 +38,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
         Date date = new Date(System.currentTimeMillis());
         LogUtils.e("TAG" + "---Date获取当前日期时间---" + simpleDateFormat.format(date));
 
-        return view;
+        return mainView;
     }
 
     @Override

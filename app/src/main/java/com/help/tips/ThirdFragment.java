@@ -75,40 +75,44 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         }
     };
 
+
+    private View mainView;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        mainView = inflater.inflate(R.layout.fragment_third, container, false);
         LogUtils.e("TAG", TAG + "---onCreateView---");
 
-        TextView tvTitle = view.findViewById(R.id.tv_title);
+        TextView tvTitle = mainView.findViewById(R.id.tv_title);
         tvTitle.setText("计算器");
-        view.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
+        mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 
          intent = new Intent(getActivity(), StepCountService.class);
 
         //数字1-9
-        View main_btn1 = view.findViewById(R.id.main_btn1);
-        View main_btn2 = view.findViewById(R.id.main_btn2);
-        View main_btn3= view.findViewById(R.id.main_btn3);
-        View main_btn4 = view.findViewById(R.id.main_btn4);
-        View main_btn5 = view.findViewById(R.id.main_btn5);
-        View main_btn6 = view.findViewById(R.id.main_btn6);
-        View main_btn7 = view.findViewById(R.id.main_btn7);
-        View main_btn8 = view.findViewById(R.id.main_btn8);
-        View main_btn9 = view.findViewById(R.id.main_btn9);
-        View main_btn0 = view.findViewById(R.id.main_btn0);
+        View main_btn1 = mainView.findViewById(R.id.main_btn1);
+        View main_btn2 = mainView.findViewById(R.id.main_btn2);
+        View main_btn3= mainView.findViewById(R.id.main_btn3);
+        View main_btn4 = mainView.findViewById(R.id.main_btn4);
+        View main_btn5 = mainView.findViewById(R.id.main_btn5);
+        View main_btn6 = mainView.findViewById(R.id.main_btn6);
+        View main_btn7 = mainView.findViewById(R.id.main_btn7);
+        View main_btn8 = mainView.findViewById(R.id.main_btn8);
+        View main_btn9 = mainView.findViewById(R.id.main_btn9);
+        View main_btn0 = mainView.findViewById(R.id.main_btn0);
         //运算符
-        View main_btn1a = view.findViewById(R.id.main_btn1a);// +
-        View main_btnj = view.findViewById(R.id.main_btnj);// -
-        View main_btnx = view.findViewById(R.id.main_btnx);// *
-        View main_btnc = view.findViewById(R.id.main_btnc); // /
-        View main_btnd = view.findViewById(R.id.main_btnd);//小数点
-        View main_btn1d = view.findViewById(R.id.main_btn1d);//=
-        View main_btndel = view.findViewById(R.id.main_btndel);//清空
+        View main_btn1a = mainView.findViewById(R.id.main_btn1a);// +
+        View main_btnj = mainView.findViewById(R.id.main_btnj);// -
+        View main_btnx = mainView.findViewById(R.id.main_btnx);// *
+        View main_btnc = mainView.findViewById(R.id.main_btnc); // /
+        View main_btnd = mainView.findViewById(R.id.main_btnd);//小数点
+        View main_btn1d = mainView.findViewById(R.id.main_btn1d);//=
+        View main_btndel = mainView.findViewById(R.id.main_btndel);//清空
 
 
-        editText = (EditText) view.findViewById(R.id.main_et_result);//结果集
+        editText = (EditText) mainView.findViewById(R.id.main_et_result);//结果集
 
 
         //添加点击事件
@@ -157,7 +161,7 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        return view;
+        return mainView;
     }
 
     @Override

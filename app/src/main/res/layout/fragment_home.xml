@@ -19,4 +19,77 @@
         android:layout_height="match_parent"
         android:clickable="true" />
 
+
+   <LinearLayout
+       android:layout_marginTop="1dp"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="36dp">
+       <TextView
+           android:textColor="@color/colorWhite"
+           android:gravity="center"
+           android:text="普通图"
+           android:id="@+id/tv_normal"
+           android:background="@color/colorMain"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="match_parent">
+       </TextView>
+
+       <TextView
+           android:layout_width="1dp"
+           android:layout_height="match_parent">
+       </TextView>
+
+       <TextView
+           android:textColor="@color/colorWhite"
+           android:gravity="center"
+           android:text="地形图"
+           android:id="@+id/tv_satellite"
+           android:background="@color/colorMain"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="match_parent">
+       </TextView>
+
+       <TextView
+           android:layout_width="1dp"
+           android:layout_height="match_parent">
+       </TextView>
+
+       <TextView
+           android:textColor="@color/colorWhite"
+           android:gravity="center"
+           android:text="空白图"
+           android:id="@+id/tv_blank"
+           android:background="@color/colorMain"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="match_parent">
+       </TextView>
+   </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <EditText
+            android:text="北京"
+            android:hint="城市"
+            android:id="@+id/et_city"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </EditText>
+
+        <EditText
+            android:hint="地点"
+            android:id="@+id/et_place"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </EditText>
+    </LinearLayout>
+
 </LinearLayout>

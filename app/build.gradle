@@ -77,7 +77,11 @@ dependencies {
     implementation "com.jakewharton:butterknife:$rootProject.ext.butter_knife_version"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butter_knife_version"
 
-    implementation files('libs/BaiduLBS_Android.jar')
+    /* 定位SDK:全量定位
+       地图SDK: 步骑行导航(含基础地图(含室内地图)， 检索
+      )*/
+    implementation files('libs/BaiduLBS_AndroidSDK_Lib.aar')
+
 
     implementation 'com.orhanobut:logger:1.8'
 
