@@ -2,17 +2,20 @@ apply plugin: 'com.android.application'
 
 apply from: "${project.rootDir}/sign.properties"
 
+Properties buildProps = new Properties();
+buildProps.load(new FileInputStream(file(rootProject.file("version.properties"))))
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion configs.compileSdkVersion
+    buildToolsVersion configs.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.help.tips"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.1"
+
+        minSdkVersion configs.minSdkVersion
+        targetSdkVersion configs.targetSdkVersion
+        applicationId configs.applicationId
+        versionCode Integer.parseInt(buildProps["versionCode"])
+        versionName String.valueOf(buildProps["versionName"])
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
