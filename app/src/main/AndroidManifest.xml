@@ -30,7 +30,7 @@
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="D0BnDsPHBABkbhxC1zOFGQCsdbONSeYK" />
+            android:value= "${BAIDU_MAP_API_KEY}" />
 
 
         <service
