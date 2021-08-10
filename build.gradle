@@ -37,7 +37,7 @@ task clean(type: Delete) {
 ext {
     //Android configs
     configs = [
-            applicationId    : "com.zfxf.douniu",
+            applicationId    : "com.help.tips",
             compileSdkVersion: 29,
             buildToolsVersion: '29.0.2',
             minSdkVersion    : 21,

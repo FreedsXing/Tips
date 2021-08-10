@@ -11,13 +11,13 @@ ToastUtils {
 
     private static Toast toast;
 
-
     /**
      * Toast提示
-     * @param msg
+     *
+     * @param msg msg
      */
     public static void toastMessage(String msg) {
-        if (TextUtils.isEmpty(msg)  || "null".equals(msg) || msg.contains("null")) {
+        if (TextUtils.isEmpty(msg) || "null".equals(msg) || msg.contains("null")) {
             return;
         }
         int duration;

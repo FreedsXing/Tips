@@ -20,6 +20,8 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "FourthFragment";
 
+    private static final String ACTIVITY_PAGE = "https://huodong.weibo.cn/olympics2021/h5_medal?sinainternalbrowser=topnav&portrait_only=1&share_menu=1&disable_sinaurl=1&disable_gesture_back=1&topnavstyle=1";
+
     private WebView webView;
     private View mainView;
 
@@ -49,13 +51,13 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://www.baidu.com");
+        webView.loadUrl(ACTIVITY_PAGE);
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 LogUtils.e("TAG" + "---shouldOverrideUrlLoading---" + url);
-                view.loadUrl(url);
+                //view.loadUrl(url);
                 return super.shouldOverrideUrlLoading(view, url);
             }
         });
