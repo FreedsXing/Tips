@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 
+/config.properties
+/sign.properties
