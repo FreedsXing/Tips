@@ -83,7 +83,7 @@ dependencies {
     /* 定位SDK:全量定位
        地图SDK: 步骑行导航(含基础地图(含室内地图)， 检索
       )*/
-    implementation files('libs/BaiduLBS_AndroidSDK_Lib.aar')
+    implementation files('libs/BaiduLBS_Android.jar')
 
 
     implementation 'com.orhanobut:logger:1.8'

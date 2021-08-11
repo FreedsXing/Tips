@@ -47,7 +47,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextView tvSatellite;
     private TextView tvBlank;
 
-
     private EditText etCity;
     private EditText etPlace;
 
