@@ -19,6 +19,18 @@
         android:layout_height="match_parent"
         android:clickable="true" />
 
+    <TextView
+        android:background="@color/colorMain"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+    </TextView>
+
+    <com.wingjay.blurimageviewlib.BlurImageView
+        android:background="@color/colorMain"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+    </com.wingjay.blurimageviewlib.BlurImageView>
+
 
    <LinearLayout
        android:layout_marginTop="1dp"
