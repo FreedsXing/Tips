@@ -1,5 +1,7 @@
 package com.help.tips;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -95,6 +97,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         tvBlank.setOnClickListener(this);
 
         poiSearch = PoiSearch.newInstance();
+
+        mainView.findViewById(R.id.tv_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage("com.zfxf.douniu");
+//                getActivity().startActivity(intent);
+
+//                LivingActivity
+//                ComponentName componentName = new ComponentName("com.zfxf.douniu", "com.zfxf.douniu.activity.liveshow.LivingActivity");
+//                getActivity().startActivity(new Intent().setComponent(componentName));
+                Intent intent = new Intent();
+                intent.setAction("login");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getActivity().startActivity(intent);
+            }
+        });
 
 
         etPlace.addTextChangedListener(new TextWatcher() {
