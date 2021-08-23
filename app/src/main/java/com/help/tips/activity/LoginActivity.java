@@ -1,7 +1,5 @@
 package com.help.tips.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +14,7 @@ import android.widget.Toast;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseActivity;
 import com.help.tips.fingerprint.FingerPrintDialog;
 import com.help.tips.fingerprint.FingerprintCore;
 import com.help.tips.fingerprint.FingerprintUtil;
@@ -28,7 +27,7 @@ import butterknife.ButterKnife;
 /**
  * @author Administrator
  */
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.et_account)
     public EditText etAccount;
