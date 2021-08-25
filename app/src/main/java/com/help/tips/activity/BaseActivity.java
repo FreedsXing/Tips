@@ -1,9 +1,11 @@
-package com.help.tips.base;
+package com.help.tips.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Lifecycle;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -15,6 +17,10 @@ import com.help.tips.util.ActivityCollector;
 
 public class BaseActivity extends AppCompatActivity {
 
+
+    //全局绑定and解绑
+    private Unbinder mUnbinder = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +29,16 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        // 也可以调换 Activity的setContentView 和 super.onCreate(savedInstanceState) 的位置
+        mUnbinder = ButterKnife.bind(this);
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        mUnbinder.unbind();
         LogUtils.e("---" + getClass().getSimpleName() + "---onDestroy");
         ActivityCollector.removeActivity(this);
     }

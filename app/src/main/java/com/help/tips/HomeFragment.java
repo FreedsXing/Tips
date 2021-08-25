@@ -7,12 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.help.tips.base.BaseFragment;
 import com.help.tips.fragment.MapFragment;
-import com.help.tips.fragment.Test2Fragment;
+import com.help.tips.fragment.TestFragment;
 import com.help.tips.fragment.Test3Fragment;
 import com.help.tips.fragment.Test4Fragment;
 import com.help.tips.fragment.Test5Fragment;
-import com.help.tips.fragment.TestFragment;
+import com.help.tips.fragment.TimeFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,22 +21,29 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
+import butterknife.BindView;
 
 
 /**
  * @author Administrator
  */
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "HomeFragment";
 
     private View mainView;
 
-    private TabLayout mTableLayout;
+    @BindView(R.id.tb_layout)
+    TabLayout mTableLayout;
     private ViewPager mViewPager;
 
     private  List<Fragment> mFragmentList = new ArrayList<>();
     private List<String> mTtileList = new ArrayList<>();
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_home;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,17 +55,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mTableLayout = mainView.findViewById(R.id.tb_layout);
         mViewPager = mainView.findViewById(R.id.viewPager);
 
-
-
-        mFragmentList.add(new MapFragment());
         mFragmentList.add(new TestFragment());
-        mFragmentList.add(new Test2Fragment());
+        mTtileList.add("测试");
+        mFragmentList.add(new MapFragment());
+        mFragmentList.add(new TimeFragment());
         mFragmentList.add(new Test3Fragment());
         mFragmentList.add(new Test4Fragment());
         mFragmentList.add(new Test5Fragment());
         mTtileList.add("地图");
-        mTtileList.add("测试");
-        mTtileList.add("测试2");
+        mTtileList.add("时间");
         mTtileList.add("测试3");
         mTtileList.add("测试4");
         mTtileList.add("测试5");

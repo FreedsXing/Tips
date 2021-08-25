@@ -6,9 +6,10 @@
     tools:context=".fragment.MapFragment">
 
 
-    <TextView
+    <com.help.tips.view.MyView
+        android:id="@+id/my_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TestFragment" />
+        android:layout_height="match_parent">
+    </com.help.tips.view.MyView>
 
 </FrameLayout>

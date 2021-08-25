@@ -2,13 +2,11 @@ package com.help.tips.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
-import com.help.tips.base.BaseActivity;
 
 public class AboutUsActivity extends BaseActivity implements View.OnClickListener {
 

@@ -85,11 +85,6 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
             case R.id.ll_clear_cache:
                 CacheDataManager.clearAllCache(getActivity());
                 tvCache.setText("0.00M");
-                try {
-                    LogUtils.e("TAG" + "---onClick---" + getTotalCacheSize(getActivity()));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
                 break;
             case R.id.ll_version:
                 Toast.makeText(getActivity(), "当前已是最新版本", Toast.LENGTH_LONG).show();

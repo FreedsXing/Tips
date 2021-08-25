@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
-import com.help.tips.base.BaseActivity;
 import com.help.tips.fingerprint.FingerPrintDialog;
 import com.help.tips.fingerprint.FingerprintCore;
 import com.help.tips.fingerprint.FingerprintUtil;
@@ -22,7 +21,6 @@ import com.help.tips.fingerprint.KeyguardLockScreenManager;
 import com.help.tips.util.SharedPreferencesUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * @author Administrator
@@ -54,7 +52,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
 
         mFingerGuideImg = (ImageView) findViewById(R.id.fingerprint_guide);
         mFingerGuideTxt = (TextView) findViewById(R.id.fingerprint_guide_tip);

@@ -11,7 +11,6 @@ import com.help.tips.HomeFragment;
 import com.help.tips.R;
 import com.help.tips.SecondFragment;
 import com.help.tips.ThirdFragment;
-import com.help.tips.base.BaseActivity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;

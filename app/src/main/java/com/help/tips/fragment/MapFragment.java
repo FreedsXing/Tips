@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import butterknife.BindView;
 
 import android.text.Editable;
 import android.text.TextUtils;
@@ -30,11 +31,12 @@ import com.baidu.mapapi.search.poi.PoiResult;
 import com.baidu.mapapi.search.poi.PoiSearch;
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseFragment;
 
 import java.util.List;
 
 
-public class MapFragment extends Fragment implements View.OnClickListener {
+public class MapFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "MapFragment";
 
@@ -42,12 +44,17 @@ public class MapFragment extends Fragment implements View.OnClickListener {
 
 
     private MapView mMapView = null;
-    private TextView tvNomal;
-    private TextView tvSatellite;
-    private TextView tvBlank;
+    @BindView(R.id.tv_normal)
+    TextView tvNomal;
+    @BindView(R.id.tv_satellite)
+    TextView tvSatellite;
+    @BindView(R.id.tv_blank)
+    TextView tvBlank;
 
-    private EditText etCity;
-    private EditText etPlace;
+    @BindView(R.id.et_city)
+    EditText etCity;
+    @BindView(R.id.et_place)
+    EditText etPlace;
 
     BaiduMapOptions options;
     PoiSearch poiSearch;
@@ -57,21 +64,10 @@ public class MapFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         mainView = inflater.inflate(R.layout.fragment_map, container, false);
         //mMapView = (MapView) view.findViewById(R.id.bmapView);
 
-        tvNomal = mainView.findViewById(R.id.tv_normal);
-        tvSatellite = mainView.findViewById(R.id.tv_satellite);
-        tvBlank = mainView.findViewById(R.id.tv_blank);
-
-
-        etCity = mainView.findViewById(R.id.et_city);
-        etPlace = mainView.findViewById(R.id.et_place);
-
-
         LogUtils.e(TAG + "---onCreateView---");
-
 
         options = new BaiduMapOptions();
         options.mapType(BaiduMap.MAP_TYPE_SATELLITE);
@@ -92,13 +88,10 @@ public class MapFragment extends Fragment implements View.OnClickListener {
         poiSearch = PoiSearch.newInstance();
 
 
-
         etPlace.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 LogUtils.e(TAG + "---" + etCity.getText().toString());
@@ -114,7 +107,6 @@ public class MapFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void afterTextChanged(Editable s) {
-
             }
         });
 

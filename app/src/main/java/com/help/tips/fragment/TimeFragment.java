@@ -10,12 +10,15 @@ import com.help.tips.R;
 import androidx.fragment.app.Fragment;
 
 
-public class Test2Fragment extends Fragment {
+public class TimeFragment extends Fragment {
 
+    private View mainView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_test2, container, false);
+        mainView = inflater.inflate(R.layout.fragment_time, container, false);
+
+        return mainView;
     }
 }

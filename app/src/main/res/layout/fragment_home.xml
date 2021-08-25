@@ -13,7 +13,7 @@
 
     <com.google.android.material.tabs.TabLayout
         app:tabMode="scrollable"
-        app:tabIndicatorColor="@color/colorWhite"
+        app:tabIndicatorColor="@null"
         app:tabSelectedTextColor="@color/colorWhite"
         app:tabBackground="@color/colorMain"
         android:id="@+id/tb_layout"
