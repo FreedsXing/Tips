@@ -92,6 +92,6 @@ dependencies {
 
     implementation 'com.github.FreedsXing:FreedsUtil:1.0.3'
 
-    compile 'com.wingjay:blurimageviewlib:2.0.1'
+    implementation 'com.wingjay:blurimageviewlib:2.0.1'
 
 }

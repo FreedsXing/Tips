@@ -11,105 +11,20 @@
         layout="@layout/layout_title_base">
     </include>
 
-
-    <com.baidu.mapapi.map.MapView
-        android:visibility="gone"
-        android:id="@+id/bmapView"
+    <com.google.android.material.tabs.TabLayout
+        app:tabMode="scrollable"
+        app:tabIndicatorColor="@color/colorWhite"
+        app:tabSelectedTextColor="@color/colorWhite"
+        app:tabBackground="@color/colorMain"
+        android:id="@+id/tb_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true" />
-
-    <TextView
-        android:background="@color/colorMain"
-        android:layout_width="100dp"
-        android:layout_height="100dp">
-    </TextView>
-
-    <com.wingjay.blurimageviewlib.BlurImageView
-        android:background="@color/colorMain"
-        android:layout_width="100dp"
-        android:layout_height="100dp">
-    </com.wingjay.blurimageviewlib.BlurImageView>
+        android:layout_height="28dp">
+    </com.google.android.material.tabs.TabLayout>
 
 
-    <TextView
-        android:id="@+id/tv_test"
-        android:background="@color/colorMain"
-        android:layout_width="100dp"
-        android:layout_height="100dp">
-    </TextView>
-
-
-   <LinearLayout
-       android:layout_marginTop="1dp"
-       android:orientation="horizontal"
-       android:layout_width="match_parent"
-       android:layout_height="36dp">
-       <TextView
-           android:textColor="@color/colorWhite"
-           android:gravity="center"
-           android:text="普通图"
-           android:id="@+id/tv_normal"
-           android:background="@color/colorMain"
-           android:layout_weight="1"
-           android:layout_width="0dp"
-           android:layout_height="match_parent">
-       </TextView>
-
-       <TextView
-           android:layout_width="1dp"
-           android:layout_height="match_parent">
-       </TextView>
-
-       <TextView
-           android:textColor="@color/colorWhite"
-           android:gravity="center"
-           android:text="地形图"
-           android:id="@+id/tv_satellite"
-           android:background="@color/colorMain"
-           android:layout_weight="1"
-           android:layout_width="0dp"
-           android:layout_height="match_parent">
-       </TextView>
-
-       <TextView
-           android:layout_width="1dp"
-           android:layout_height="match_parent">
-       </TextView>
-
-       <TextView
-           android:textColor="@color/colorWhite"
-           android:gravity="center"
-           android:text="空白图"
-           android:id="@+id/tv_blank"
-           android:background="@color/colorMain"
-           android:layout_weight="1"
-           android:layout_width="0dp"
-           android:layout_height="match_parent">
-       </TextView>
-   </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="48dp">
-
-        <EditText
-            android:text="北京"
-            android:hint="城市"
-            android:id="@+id/et_city"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-        </EditText>
-
-        <EditText
-            android:hint="地点"
-            android:id="@+id/et_place"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-        </EditText>
-    </LinearLayout>
-
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>

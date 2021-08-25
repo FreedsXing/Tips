@@ -96,6 +96,7 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
                 break;
             case R.id.ll_about_us:
                 Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+                intent.putExtra("key", "gggo");
                 startActivity(intent);
                 break;
             case R.id.ll_login_out:

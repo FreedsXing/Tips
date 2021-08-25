@@ -20,7 +20,7 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "FourthFragment";
 
-    private static final String ACTIVITY_PAGE = "https://huodong.weibo.cn/olympics2021/h5_medal?sinainternalbrowser=topnav&portrait_only=1&share_menu=1&disable_sinaurl=1&disable_gesture_back=1&topnavstyle=1";
+    private static  String ACTIVITY_PAGE = "https://huodong.weibo.cn/olympics2021/h5_medal?sinainternalbrowser=topnav&portrait_only=1&share_menu=1&disable_sinaurl=1&disable_gesture_back=1&topnavstyle=1";
 
     private WebView webView;
     private View mainView;
@@ -51,6 +51,7 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        ACTIVITY_PAGE = "file:///android_asset/jumpToApp.html";
         webView.loadUrl(ACTIVITY_PAGE);
 
         webView.setWebViewClient(new WebViewClient() {
