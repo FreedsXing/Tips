@@ -42,7 +42,6 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
 
     private View mainView;
 
-
     private MapView mMapView = null;
     @BindView(R.id.tv_normal)
     TextView tvNomal;
@@ -59,11 +58,15 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
     BaiduMapOptions options;
     PoiSearch poiSearch;
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_map;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_map, container, false);
         //mMapView = (MapView) view.findViewById(R.id.bmapView);
 
@@ -92,6 +95,7 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 LogUtils.e(TAG + "---" + etCity.getText().toString());
@@ -107,6 +111,7 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
 
             @Override
             public void afterTextChanged(Editable s) {
+
             }
         });
 

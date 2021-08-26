@@ -23,7 +23,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_second, container, false);
 
         TextView tvTitle = mainView.findViewById(R.id.tv_title);

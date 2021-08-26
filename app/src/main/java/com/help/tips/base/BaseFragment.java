@@ -30,12 +30,11 @@ public class BaseFragment extends Fragment {
 
         View view = null;
         if (getLayoutId() != 0){
-            view = inflater.inflate(R.layout.fragment_base, container, false);
+            view = inflater.inflate(getLayoutId(), container, false);
            mUnbinder = ButterKnife.bind(this, view);
         }
         return view;
     }
-
 
     @Override
     public void onDestroyView() {

@@ -9,10 +9,10 @@ import android.widget.TextView;
 import com.google.android.material.tabs.TabLayout;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.fragment.MapFragment;
-import com.help.tips.fragment.TestFragment;
 import com.help.tips.fragment.Test3Fragment;
 import com.help.tips.fragment.Test4Fragment;
 import com.help.tips.fragment.Test5Fragment;
+import com.help.tips.fragment.TestFragment;
 import com.help.tips.fragment.TimeFragment;
 
 import java.util.ArrayList;
@@ -48,9 +48,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_home, container, false);
-        //mMapView = (MapView) view.findViewById(R.id.bmapView);
 
         mTableLayout = mainView.findViewById(R.id.tb_layout);
         mViewPager = mainView.findViewById(R.id.viewPager);
