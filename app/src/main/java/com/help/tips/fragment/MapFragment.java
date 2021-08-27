@@ -67,6 +67,7 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+
         mainView = inflater.inflate(R.layout.fragment_map, container, false);
         //mMapView = (MapView) view.findViewById(R.id.bmapView);
 

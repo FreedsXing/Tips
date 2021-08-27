@@ -21,4 +21,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </TextView>
+
+    <TextView
+        android:paddingTop="10dp"
+        android:lineHeight="22dp"
+        android:textSize="@dimen/text_size_14sp"
+        style="@style/normal_padding_left_right_16dp"
+        android:text="小目标：一个为自己带来微小却美好改变的习惯养成应用。"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
 </LinearLayout>

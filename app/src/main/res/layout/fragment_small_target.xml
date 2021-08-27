@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.MapFragment">
+
+
+  <ImageView
+      android:background="@color/colorMain"
+      android:layout_width="match_parent"
+      android:layout_height="60dp">
+  </ImageView>
+
+
+    <LinearLayout
+        android:background="@color/colorBgF7"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_monday"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_maincolor_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="一"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_tuesday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="二"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_wednesday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="三"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_thursday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="四"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_friday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="五"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_saturaday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="六"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+        <TextView
+            android:id="@+id/tv_sunday"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_color2_circle_edge_2dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="日"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+        </TextView>
+
+
+        <ImageView
+            android:layout_marginStart="50dp"
+            android:layout_gravity="center_vertical|end"
+            android:background="@color/colorMain"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+        </ImageView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:background="@color/colorLineDialogDC"
+        android:layout_width="match_parent"
+        android:layout_height="3dp">
+    </TextView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/colorText666"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

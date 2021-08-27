@@ -12,7 +12,7 @@ import com.help.tips.fragment.MapFragment;
 import com.help.tips.fragment.Test3Fragment;
 import com.help.tips.fragment.Test4Fragment;
 import com.help.tips.fragment.Test5Fragment;
-import com.help.tips.fragment.TestFragment;
+import com.help.tips.fragment.SmallTargetFragment;
 import com.help.tips.fragment.TimeFragment;
 
 import java.util.ArrayList;
@@ -54,8 +54,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mTableLayout = mainView.findViewById(R.id.tb_layout);
         mViewPager = mainView.findViewById(R.id.viewPager);
 
-        mFragmentList.add(new TestFragment());
-        mTtileList.add("测试");
+        mFragmentList.add(new SmallTargetFragment());
+        mTtileList.add("小目标");
         mFragmentList.add(new MapFragment());
         mFragmentList.add(new TimeFragment());
         mFragmentList.add(new Test3Fragment());
