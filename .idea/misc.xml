@@ -4,11 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Tips/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.109375" />
+        <entry key="..\:/Tips/app/src/main/res/drawable/bg_circle_maincolor_radius_4dp.xml" value="0.2703125" />
+        <entry key="..\:/Tips/app/src/main/res/drawable/bg_circle_white_radius_30dp.xml" value="0.253125" />
         <entry key="..\:/Tips/app/src/main/res/drawable/bg_color2_circle_edge_2dp.xml" value="0.24479166666666666" />
         <entry key="..\:/Tips/app/src/main/res/drawable/bg_maincolor_circle_edge_2dp.xml" value="0.24479166666666666" />
+        <entry key="..\:/Tips/app/src/main/res/drawable/bg_maincolor_radius_40dp.xml" value="0.253125" />
         <entry key="..\:/Tips/app/src/main/res/layout/activity_about_us.xml" value="0.2984375" />
         <entry key="..\:/Tips/app/src/main/res/layout/activity_home.xml" value="0.24427083333333333" />
         <entry key="..\:/Tips/app/src/main/res/layout/activity_main.xml" value="0.32135416666666666" />
+        <entry key="..\:/Tips/app/src/main/res/layout/activity_sign_in.xml" value="0.25625" />
         <entry key="..\:/Tips/app/src/main/res/layout/fragment_fifth.xml" value="0.2296875" />
         <entry key="..\:/Tips/app/src/main/res/layout/fragment_home.xml" value="0.25052083333333336" />
         <entry key="..\:/Tips/app/src/main/res/layout/fragment_map.xml" value="0.26927083333333335" />
@@ -20,6 +24,7 @@
         <entry key="..\:/Tips/app/src/main/res/layout/fragment_test4.xml" value="0.24270833333333333" />
         <entry key="..\:/Tips/app/src/main/res/layout/fragment_test5.xml" value="0.24270833333333333" />
         <entry key="..\:/Tips/app/src/main/res/layout/item_small_target_layout.xml" value="0.33" />
+        <entry key="..\:/Tips/app/src/main/res/layout/layout_title_base.xml" value="0.25625" />
         <entry key="..\:/Tips/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.24427083333333333" />
       </map>
     </option>

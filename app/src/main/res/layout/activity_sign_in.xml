@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SignInActivity">
+
+    <include
+        layout="@layout/layout_title_base">
+    </include>
+
+
+    <TextView
+        android:id="@+id/tv_btn2"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_maincolor_radius_40dp"
+        android:layout_width="80dp"
+        android:layout_height="180dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tv_btn"
+        android:layout_marginBottom="104dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_circle_white_radius_36dp"
+        android:layout_width="72dp"
+        android:layout_height="66dp">
+    </TextView>
+
+</RelativeLayout>

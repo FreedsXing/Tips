@@ -1,13 +1,16 @@
 package com.help.tips.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.activity.SignInActivity;
 import com.help.tips.bean.SmallTargetItemBean;
 
 import java.util.ArrayList;
@@ -37,7 +40,18 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
         SmallTargetItemBean bean = mSmallTargetList.get(position);
         LogUtils.e("TAG", "---onBindViewHolder---" + bean.name);
         holder.tvName.setText(bean.name);
-        holder.tvContent.setText(bean.name);
+        holder.tvContent.setText(bean.name + bean.days);
+        holder.ivIcon.setBackgroundResource(bean.imgUrl);
+
+        holder.rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, SignInActivity.class);
+                intent.putExtra("name", bean.name);
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -48,6 +62,7 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
 
     public class SmallTargetViewHolder extends RecyclerView.ViewHolder {
 
+        RelativeLayout rl;
         ImageView ivIcon;
         TextView tvName;
         TextView tvContent;
@@ -55,6 +70,7 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
 
         public SmallTargetViewHolder(@NonNull View itemView) {
             super(itemView);
+            rl = itemView.findViewById(R.id.rl);
             ivIcon = itemView.findViewById(R.id.iv_icon);
             tvName = itemView.findViewById(R.id.tv_name);
             tvContent = itemView.findViewById(R.id.tv_content);
