@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.objectbox' // 应用Android插件后
 
 apply from: "${project.rootDir}/sign.properties"
+
 
 Properties buildProps = new Properties();
 buildProps.load(new FileInputStream(file(rootProject.file("version.properties"))))
@@ -39,9 +41,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             manifestPlaceholders = [
-                    TIPS_PKGNAME                   : configs.applicationId,
+                    TIPS_PKGNAME     : configs.applicationId,
                     BAIDU_MAP_API_KEY: String.valueOf(buildProps2["baiduApiKey"])
             ]
+            debuggable true
         }
         debug {
             minifyEnabled false
@@ -94,4 +97,10 @@ dependencies {
 
     implementation 'com.wingjay:blurimageviewlib:2.0.1'
 
+
+    debugCompile "io.objectbox:objectbox-android-objectbrowser:$rootProject.ext.objectbox_version"
+    releaseCompile "io.objectbox:objectbox-android:$rootProject.ext.objectbox_version"
+
+
+    implementation 'com.alivc.pusher:AlivcLivePusher:4.2.0'
 }

@@ -30,3 +30,6 @@
 -keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
     boolean mShiftingMode;
 }
+
+#阿里推流
+-keep class com.alivc.** { *;}

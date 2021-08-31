@@ -11,9 +11,11 @@ import android.widget.TextView;
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 import com.help.tips.activity.SignInActivity;
+import com.help.tips.bean.SmallTargetBean;
 import com.help.tips.bean.SmallTargetItemBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,9 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetListAdapter.SmallTargetViewHolder> {
 
     private Activity mContext;
-    private ArrayList<SmallTargetItemBean> mSmallTargetList;
+    private List<SmallTargetBean> mSmallTargetList;
 
-    public SmallTargetListAdapter(Activity activity, ArrayList<SmallTargetItemBean> smallTargetList) {
+    public SmallTargetListAdapter(Activity activity, List<SmallTargetBean> smallTargetList) {
         mContext = activity;
         mSmallTargetList = smallTargetList;
     }
@@ -37,17 +39,17 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
 
     @Override
     public void onBindViewHolder(@NonNull SmallTargetViewHolder holder, int position) {
-        SmallTargetItemBean bean = mSmallTargetList.get(position);
-        LogUtils.e("TAG", "---onBindViewHolder---" + bean.name);
-        holder.tvName.setText(bean.name);
-        holder.tvContent.setText(bean.name + bean.days);
-        holder.ivIcon.setBackgroundResource(bean.imgUrl);
+        SmallTargetBean bean = mSmallTargetList.get(position);
+        LogUtils.e("TAG", "---onBindViewHolder---" + bean.getUserName());
+        holder.tvName.setText(bean.getUserName());
+        holder.tvContent.setText(bean.getContent() + bean.getUserId());
+        holder.ivIcon.setBackgroundResource(bean.getImgUrl());
 
         holder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, SignInActivity.class);
-                intent.putExtra("name", bean.name);
+                intent.putExtra("name", bean.getUserName());
                 mContext.startActivity(intent);
             }
         });

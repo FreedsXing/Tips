@@ -41,7 +41,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="16dp"
-        android:background="@color/colorMain"></ImageView>
+        android:background="@drawable/target_to_signin"></ImageView>
 
     <TextView
         android:layout_marginEnd="16dp"

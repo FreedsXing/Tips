@@ -41,8 +41,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         ivBack.setOnClickListener(this);
         tvBtn.setOnClickListener(this);
         tvBtn2.setOnClickListener(this);
-
-
     }
 
 
@@ -53,11 +51,13 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                 finish();
                 break;
             case R.id.tv_btn:
-            case R.id.tv_btn2:
+                LogUtils.e("TAG", "---onClick---");
                 Animation translateAnit = new TranslateAnimation(0, 0, 0, -300);
                 translateAnit.setDuration(1200);
                 translateAnit.setFillAfter(true);
                 tvBtn.setAnimation(translateAnit);
+                tvBtn.startAnimation(translateAnit);
+                tvBtn.setClickable(false);
                 break;
             default:
                 break;
