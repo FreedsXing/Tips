@@ -6,9 +6,11 @@
     tools:context=".fragment.MapFragment">
 
 
-    <TextView
+
+    <WebView
+        android:id="@+id/web"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TestFragment" />
+        android:layout_height="match_parent">
+    </WebView>
 
 </FrameLayout>

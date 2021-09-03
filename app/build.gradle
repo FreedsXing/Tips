@@ -101,6 +101,4 @@ dependencies {
     debugCompile "io.objectbox:objectbox-android-objectbrowser:$rootProject.ext.objectbox_version"
     releaseCompile "io.objectbox:objectbox-android:$rootProject.ext.objectbox_version"
 
-
-    implementation 'com.alivc.pusher:AlivcLivePusher:4.2.0'
 }

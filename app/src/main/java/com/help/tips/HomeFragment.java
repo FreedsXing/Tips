@@ -9,9 +9,9 @@ import android.widget.TextView;
 import com.google.android.material.tabs.TabLayout;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.fragment.MapFragment;
-import com.help.tips.fragment.Test3Fragment;
-import com.help.tips.fragment.Test4Fragment;
-import com.help.tips.fragment.Test5Fragment;
+import com.help.tips.fragment.LiveBarFragment;
+import com.help.tips.fragment.XitujuejinFragment;
+import com.help.tips.fragment.DoubanFilmFragment;
 import com.help.tips.fragment.SmallTargetFragment;
 import com.help.tips.fragment.TimeFragment;
 
@@ -58,14 +58,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mTtileList.add("小目标");
         mFragmentList.add(new MapFragment());
         mFragmentList.add(new TimeFragment());
-        mFragmentList.add(new Test3Fragment());
-        mFragmentList.add(new Test4Fragment());
-        mFragmentList.add(new Test5Fragment());
+        mFragmentList.add(new LiveBarFragment());
+        mFragmentList.add(new XitujuejinFragment());
+        mFragmentList.add(new DoubanFilmFragment());
         mTtileList.add("地图");
         mTtileList.add("时间");
-        mTtileList.add("测试3");
-        mTtileList.add("测试4");
-        mTtileList.add("测试5");
+        mTtileList.add("直播吧");
+        mTtileList.add("稀土掘金");
+        mTtileList.add("豆瓣电影");
 
         mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 

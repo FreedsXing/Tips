@@ -19,6 +19,11 @@ public class TimeFragment extends Fragment {
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_time, container, false);
 
+
+
+
+
+
         return mainView;
     }
 }
