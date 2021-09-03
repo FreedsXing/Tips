@@ -11,7 +11,6 @@ import com.help.tips.base.BaseFragment;
 import com.help.tips.fragment.MapFragment;
 import com.help.tips.fragment.LiveBarFragment;
 import com.help.tips.fragment.XitujuejinFragment;
-import com.help.tips.fragment.DoubanFilmFragment;
 import com.help.tips.fragment.SmallTargetFragment;
 import com.help.tips.fragment.TimeFragment;
 
@@ -60,12 +59,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mFragmentList.add(new TimeFragment());
         mFragmentList.add(new LiveBarFragment());
         mFragmentList.add(new XitujuejinFragment());
-        mFragmentList.add(new DoubanFilmFragment());
         mTtileList.add("地图");
         mTtileList.add("时间");
         mTtileList.add("直播吧");
         mTtileList.add("稀土掘金");
-        mTtileList.add("豆瓣电影");
 
         mainView.findViewById(R.id.iv_back_logo).setVisibility(View.GONE);
 

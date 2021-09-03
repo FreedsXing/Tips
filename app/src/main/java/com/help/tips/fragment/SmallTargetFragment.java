@@ -125,7 +125,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
                 String etNameStr = etName.getText().toString();
                 String etContentStr = etContent.getText().toString();
 
-
                 SmallTargetBean user = new SmallTargetBean();
                 user.setUserId(String.valueOf(mIdWorker.nextId()));
 
@@ -343,7 +342,15 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
      */
     private void showTodayWeek() {
         String week = TimeUtil.dateToWeek(System.currentTimeMillis() + "");
+        tvMonday = mainView.findViewById(R.id.tv_monday);
         tvTuesday = mainView.findViewById(R.id.tv_tuesday);
+        tvWednesday = mainView.findViewById(R.id.tv_wednesday);
+        tvThursday = mainView.findViewById(R.id.tv_thursday);
+        tvFriday = mainView.findViewById(R.id.tv_friday);
+        tvSaturaday = mainView.findViewById(R.id.tv_saturaday);
+        tvSunday = mainView.findViewById(R.id.tv_sunday);
+
+
 
         switch (week) {
             case "星期一":
