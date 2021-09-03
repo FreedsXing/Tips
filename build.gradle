@@ -98,3 +98,26 @@ ext {
     //数据库
     objectbox_version = '2.8.1'
 }
+
+
+//打印 all project
+this.getProjects()
+def getProjects() {
+    println '--------------------------'
+    println 'Root Project'
+    println '--------------------------'
+    this.getAllprojects().eachWithIndex { Project project, int index ->
+        if(index == 0) {
+            println "Root project:'${project.name}'"
+        }else {
+            println "+---- project:'${project.name}'"
+        }
+    }
+
+    println '--------------------------'
+    println 'Sub Project'
+    println '--------------------------'
+    this.getSubprojects().eachWithIndex { Project project, int index ->
+        println "+---- project:'${project.name}'"
+    }
+}

@@ -100,5 +100,17 @@ dependencies {
 
     debugCompile "io.objectbox:objectbox-android-objectbrowser:$rootProject.ext.objectbox_version"
     releaseCompile "io.objectbox:objectbox-android:$rootProject.ext.objectbox_version"
+}
 
+this.getParentProject()
+def getParentProject() {
+    def name = this.getParent().name
+    println "this parent project name is: ${name}"
+}
+
+this.getRootPro()
+def getRootPro() {
+    def name = this.getRootProject().name
+    println "this root project name is: ${name}"
+    println "this is version = " + this.getGradle().gradleVersion
 }
