@@ -2,16 +2,10 @@ package com.help.tips.base;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.freeds.toolutil.LogUtils;
-import com.help.tips.objectbox.ObjectBox;
-
-import io.objectbox.BoxStore;
-import io.objectbox.android.AndroidObjectBrowser;
 
 /**
  * Created by Freeds on 2021/7/23 0023.
@@ -38,7 +32,5 @@ public class AppAplication extends Application {
         LogUtils.setTag("TAG");
         LogUtils.openLoging();
 
-        //ObjectBox.init(this);
-        //new AndroidObjectBrowser(ObjectBox.get()).start(this);
     }
 }

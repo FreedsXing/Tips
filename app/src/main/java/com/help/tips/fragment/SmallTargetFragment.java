@@ -3,7 +3,6 @@ package com.help.tips.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,28 +10,19 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 import com.help.tips.adapter.SmallTargetListAdapter;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.bean.SmallTargetBean;
-import com.help.tips.bean.SmallTargetItemBean;
-import com.help.tips.objectbox.ObjectBox;
-import com.help.tips.objectbox.SnowflakeIdGenerator;
-import com.help.tips.util.NameUtils;
 import com.help.tips.util.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
-import io.objectbox.Box;
-import io.objectbox.BoxStore;
-import io.objectbox.android.AndroidObjectBrowser;
 
 
 public class SmallTargetFragment extends BaseFragment implements View.OnClickListener {
@@ -50,10 +40,7 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
 
 
-    private BoxStore mBoxStore;
-    private SnowflakeIdGenerator mIdWorker;
     private List<SmallTargetBean> mList;
-    private Box<SmallTargetBean> mBox;
 
 
     private TextView tvAdd;
@@ -95,9 +82,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
         mRecyclerView = mainView.findViewById(R.id.recyclerView);
 
-        //initUserBox();
-
-        //initData();
 
         showTodayWeek();
 
@@ -122,61 +106,20 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_add:
-                String etNameStr = etName.getText().toString();
-                String etContentStr = etContent.getText().toString();
 
-                SmallTargetBean user = new SmallTargetBean();
-                user.setUserId(String.valueOf(mIdWorker.nextId()));
-
-                if (TextUtils.isEmpty(etNameStr) || TextUtils.isEmpty(etContentStr)){
-                    Toast.makeText(getActivity(), "增加用户内容缺失", Toast.LENGTH_SHORT).show();
-                    return;
-                }else {
-                    user.setUserName(etNameStr);
-                    user.setContent(etContentStr);
-
-                }
-                //user.setUserName(NameUtils.createRandomZHName(new Random().nextInt(4) + 1));
-
-                // 插入
-                mBox.put(user);
-                mList.add(user);
-
-                queryAllData();
                 Toast.makeText(getActivity(), "增加用户", Toast.LENGTH_SHORT).show();
                 // mRecyclerView.notifyAll();
 
                 break;
             case R.id.tv_del:
-                SmallTargetBean user2 = mList.get(mList.size() - 1);
-
-                //删除最末
-                mBox.remove(user2);
-
-                queryAllData();
 
                 Toast.makeText(getActivity(), "删除用户", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_update:
-                SmallTargetBean user3 = mList.get(mList.size() - 1);
-                user3.setUserName(NameUtils.createRandomZHName(new Random().nextInt(4) + 1));
-
-                //更新最末
-                mBox.put(user3);
-
-                queryAllData();
 
                 Toast.makeText(getActivity(), "更新用户", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tv_query:
-                // mUserAdapter.setNewData(new ArrayList<User>());
-
-                tvQuery.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        queryAllData();
-                    }
-                }, 1000);
 
                 Toast.makeText(getActivity(), "查询用户", Toast.LENGTH_SHORT).show();
                 break;
@@ -284,56 +227,8 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
 
 
-
-    private void initUserBox() {
-
-        mBoxStore = ObjectBox.get();
-        mBox = mBoxStore.boxFor(SmallTargetBean.class);
-    }
-
-
-    private void queryAllData() {
-        mList = mBox.query().build().find();
-       // mUserAdapter.setNewData(mUserList);
-       // rvUser.smoothScrollToPosition(mUserList.size() - 1);
-
-        for (int i = 0; i < mList.size(); i++) {
-            LogUtils.e("TAG", TAG + "---queryAll---" + mList.get(i).getUserId() + "---" + mList.get(i).getUserName());
-        }
-
-        updateAllData();
-    }
-
     private void updateAllData(){
         listAdapter.notifyDataSetChanged();
-    }
-
-
-    private void initData() {
-
-        //ID生成器
-        mIdWorker = new SnowflakeIdGenerator(0, 0);
-
-        mBox.removeAll();
-
-        mList = new ArrayList<>();
-
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            SmallTargetBean user = new SmallTargetBean();
-            user.setUserId(String.valueOf(mIdWorker.nextId()));
-            // 随机生成汉语名称
-            user.setUserName(NameUtils.createRandomZHName(random.nextInt(4) + 1));
-            mList.add(user);
-        }
-
-        listAdapter = new SmallTargetListAdapter(mActivity, mList);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setAdapter(listAdapter);
-
-        mBox.put(mList);
     }
 
 

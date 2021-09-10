@@ -1,12 +1,7 @@
 package com.help.tips.bean;
 
-import io.objectbox.annotation.Entity;
-import io.objectbox.annotation.Id;
-
-@Entity
 public class SmallTargetBean {
 
-    @Id
     private Long id;
 
     private String userId;
@@ -58,6 +53,3 @@ public class SmallTargetBean {
         this.content = content;
     }
 }
-
-
-

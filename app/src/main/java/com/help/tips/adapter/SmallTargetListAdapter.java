@@ -12,9 +12,7 @@ import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 import com.help.tips.activity.SignInActivity;
 import com.help.tips.bean.SmallTargetBean;
-import com.help.tips.bean.SmallTargetItemBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
