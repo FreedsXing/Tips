@@ -93,7 +93,7 @@ dependencies {
 
     implementation files('libs/lite-orm-1.7.0.jar')
 
-    implementation 'com.github.FreedsXing:FreedsUtil:1.0.3'
+    implementation 'com.github.FreedsXing:FreedsUtil:1.0.4'
 
     implementation 'com.wingjay:blurimageviewlib:2.0.1'
 
