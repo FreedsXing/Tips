@@ -40,7 +40,7 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
         SmallTargetBean bean = mSmallTargetList.get(position);
         LogUtils.e("TAG", "---onBindViewHolder---" + bean.getUserName());
         holder.tvName.setText(bean.getUserName());
-        holder.tvContent.setText(bean.getContent() + bean.getUserId());
+        holder.tvContent.setText(bean.getId() + "");
         holder.ivIcon.setBackgroundResource(bean.getImgUrl());
 
         holder.rl.setOnClickListener(new View.OnClickListener() {

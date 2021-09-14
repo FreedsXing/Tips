@@ -1,8 +1,5 @@
 package com.help.tips.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,9 +9,15 @@ import android.widget.TextView;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.bean.SmallTargetBean;
+
+import org.litepal.LitePal;
+
+import java.util.List;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final String TAG = "SignInActivity";
 
     private ImageView ivBack;
     private TextView tvTitle;
@@ -34,6 +37,12 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
         tvBtn = findViewById(R.id.tv_btn);
         tvBtn2 = findViewById(R.id.tv_btn2);
+
+        List<SmallTargetBean> list = LitePal.findAll(SmallTargetBean.class);
+        for (int i = 0;  i< list.size(); i++) {
+            SmallTargetBean bean = list.get(i);
+            LogUtils.e( TAG + "---LitePal---" + bean.getId() + "---" + bean.getUserName());
+        }
 
 
         tvTitle.setText(getIntent().getStringExtra("name"));

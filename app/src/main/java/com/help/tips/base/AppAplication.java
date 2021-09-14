@@ -7,6 +7,8 @@ import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.freeds.toolutil.LogUtils;
 
+import org.litepal.LitePal;
+
 /**
  * Created by Freeds on 2021/7/23 0023.
  */
@@ -31,6 +33,8 @@ public class AppAplication extends Application {
 
         LogUtils.setTag("TAG");
         LogUtils.openLoging();
+
+        LitePal.initialize(this);
 
     }
 }

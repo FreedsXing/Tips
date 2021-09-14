@@ -1,11 +1,14 @@
 package com.help.tips.bean;
 
-public class SmallTargetBean {
+import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
 
+public class SmallTargetBean extends LitePalSupport {
+
+    @Column(unique = true, defaultValue = "unknown", nullable = false)
     private Long id;
 
-    private String userId;
-
+    @Column(unique = true, defaultValue = "unknown", nullable = false)
     private String userName;
 
     private String content;
@@ -28,13 +31,6 @@ public class SmallTargetBean {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getUserName() {
         return userName;

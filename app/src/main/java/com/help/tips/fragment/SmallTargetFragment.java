@@ -2,6 +2,7 @@ package com.help.tips.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 import com.help.tips.adapter.SmallTargetListAdapter;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.bean.SmallTargetBean;
 import com.help.tips.util.TimeUtil;
+
+import org.litepal.LitePal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +42,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
     private Activity mActivity;
 
-
-
-    private List<SmallTargetBean> mList;
 
 
     private TextView tvAdd;
@@ -83,11 +84,24 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
         mRecyclerView = mainView.findViewById(R.id.recyclerView);
 
 
+        SQLiteDatabase db = LitePal.getDatabase();
+
+
+
         showTodayWeek();
 
         generationLocalData();
 
-        listAdapter = new SmallTargetListAdapter(mActivity, mList);
+
+
+        List<SmallTargetBean> list = LitePal.findAll(SmallTargetBean.class);
+        for (int i = 0;  i< list.size(); i++) {
+            SmallTargetBean bean = list.get(i);
+            LogUtils.e( TAG + "---LitePal---" + bean.getId() + "---" + bean.getUserName());
+        }
+
+
+        listAdapter = new SmallTargetListAdapter(mActivity, list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -130,106 +144,123 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
 
     private void generationLocalData(){
-        mList = new ArrayList<>();
-
 
         SmallTargetBean bean1 = new SmallTargetBean();
+        bean1.setId(1L);
         bean1.setUserName("每天背单词");
         bean1.setImgUrl(R.drawable.target_english_word);
-        mList.add(bean1);
+        bean1.save();
 
         SmallTargetBean bean2 = new SmallTargetBean();
+        bean2.setId(2L);
         bean2.setUserName("今日事今日毕");
         bean2.setImgUrl(R.drawable.target_finish_thing);
-        mList.add(bean2);
+        bean2.save();
 
         SmallTargetBean bean3 = new SmallTargetBean();
+        bean3.setId(3L);
         bean3.setUserName("每日学习新知识");
         bean3.setImgUrl(R.drawable.target_study_task);
-        mList.add(bean3);
+        bean3.save();
 
         SmallTargetBean bean4 = new SmallTargetBean();
+        bean4.setId(4L);
         bean4.setUserName("赶走坏脾气");
         bean4.setImgUrl(R.drawable.target_tolerate);
-        mList.add(bean4);
+        bean4.save();
 
         SmallTargetBean bean5 = new SmallTargetBean();
+        bean5.setId(5L);
         bean5.setUserName("戒掉拖延症");
         bean5.setImgUrl(R.drawable.target_procrastination);
-        mList.add(bean5);
+        bean5.save();
+
 
         SmallTargetBean bean6 = new SmallTargetBean();
+        bean6.setId(6L);
         bean6.setUserName("认真护肤");
         bean6.setImgUrl(R.drawable.target_skin_care);
-        mList.add(bean6);
+        bean6.save();
 
         SmallTargetBean bean7 = new SmallTargetBean();
+        bean7.setId(7L);
         bean7.setUserName("保持正能量");
         bean7.setImgUrl(R.drawable.target_positive);
-        mList.add(bean7);
+        bean7.save();
+
 
         SmallTargetBean bean8 = new SmallTargetBean();
+        bean8.setId(8L);
         bean8.setUserName("练出马甲线、腹肌");
         bean8.setImgUrl(R.drawable.target_excise_sit_up);
-        mList.add(bean8);
+        bean8.save();
+
 
         SmallTargetBean bean9 = new SmallTargetBean();
+        bean9.setId(9L);
         bean9.setUserName("每天行走");
         bean9.setImgUrl(R.drawable.target_everyday_wark);
-        mList.add(bean9);
+        bean9.save();
+
 
         SmallTargetBean bean10 = new SmallTargetBean();
+        bean10.setId(10L);
         bean10.setUserName("每日冥想");
         bean10.setImgUrl(R.drawable.target_thought);
-        mList.add(bean10);
+        bean10.save();
 
         SmallTargetBean bean11 = new SmallTargetBean();
+        bean11.setId(11L);
         bean11.setUserName("每周看电影");
         bean11.setImgUrl(R.drawable.target_watch_film);
-        mList.add(bean11);
+        bean11.save();
 
         SmallTargetBean bean12 = new SmallTargetBean();
+        bean12.setId(12L);
         bean12.setUserName("学习任务");
         bean12.setImgUrl(R.drawable.target_study_task);
-        mList.add(bean12);
+        bean12.save();
 
         SmallTargetBean bean13 = new SmallTargetBean();
+        bean13.setId(13L);
         bean13.setUserName("读书");
         bean13.setImgUrl(R.drawable.target_read);
-        mList.add(bean13);
+        bean13.save();
 
         SmallTargetBean bean14 = new SmallTargetBean();
+        bean14.setId(14L);
         bean14.setUserName("每天运动");
         bean14.setImgUrl(R.drawable.target_excise_dumbbell);
-        mList.add(bean14);
+        bean14.save();
 
         SmallTargetBean bean15 = new SmallTargetBean();
+        bean15.setId(15L);
         bean15.setUserName("吃水果");
         bean15.setImgUrl(R.drawable.target_fruits);
-        mList.add(bean15);
+        bean15.save();
+
 
         SmallTargetBean bean16 = new SmallTargetBean();
+        bean16.setId(16L);
         bean16.setUserName("早睡");
         bean16.setImgUrl(R.drawable.target_sleep_early);
-        mList.add(bean16);
+        bean16.save();
+
 
         SmallTargetBean bean17 = new SmallTargetBean();
+        bean17.setId(17L);
         bean17.setUserName("早起");
         bean17.setImgUrl(R.drawable.target_weakup_early);
-        mList.add(bean17);
+        bean17.save();
+
 
         SmallTargetBean bean18 = new SmallTargetBean();
+        bean18.setId(18L);
         bean18.setUserName("喝水");
         bean18.setImgUrl(R.drawable.target_eat_water);
-        mList.add(bean18);
+        bean18.save();
     }
 
-
-
-
-    private void updateAllData(){
-        listAdapter.notifyDataSetChanged();
-    }
 
 
     /**

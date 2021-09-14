@@ -33,3 +33,7 @@
 
 #阿里推流
 -keep class com.alivc.** { *;}
+
+#Litepal
+-keep class org.litepal.** {*;}
+-keep class * extends org.litepal.crud.LitePalSupport {*;}
