@@ -13,6 +13,19 @@
 
 
     <TextView
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        android:text="取消打卡"
+        android:background="@color/colorMain"
+        android:id="@+id/tv_test"
+        android:layout_marginTop="200dp"
+        android:layout_width="180dp"
+        android:layout_height="36dp">
+    </TextView>
+
+    <TextView
         android:id="@+id/tv_btn2"
         android:layout_marginBottom="100dp"
         android:layout_centerHorizontal="true"

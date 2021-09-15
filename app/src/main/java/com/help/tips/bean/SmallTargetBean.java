@@ -6,14 +6,16 @@ import org.litepal.crud.LitePalSupport;
 public class SmallTargetBean extends LitePalSupport {
 
     @Column(unique = true, defaultValue = "unknown", nullable = false)
-    private Long id;
+    private int id;
 
     @Column(unique = true, defaultValue = "unknown", nullable = false)
-    private String userName;
+    private String targetName;
 
-    private String content;
+    private int finishDay = 0; //看电影为周
 
     private int imgUrl;
+
+    private boolean isLike = true;
 
 
     public int getImgUrl() {
@@ -23,29 +25,36 @@ public class SmallTargetBean extends LitePalSupport {
         this.imgUrl = imgUrl;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
 
-    public String getUserName() {
-        return userName;
+    public String getTargetName() {
+        return targetName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setTargetName(String targetName) {
+        this.targetName = targetName;
     }
 
-
-    public String getContent() {
-        return content;
+    public int getFinishDay() {
+        return finishDay;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setFinishDay(int finishDay) {
+        this.finishDay = finishDay;
+    }
+
+    public boolean isLike() {
+        return isLike;
+    }
+
+    public void setLike(boolean like) {
+        isLike = like;
     }
 }

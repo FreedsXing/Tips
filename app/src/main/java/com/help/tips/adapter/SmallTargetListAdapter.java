@@ -2,6 +2,11 @@ package com.help.tips.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,6 +17,7 @@ import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 import com.help.tips.activity.SignInActivity;
 import com.help.tips.bean.SmallTargetBean;
+import com.help.tips.util.UnitTurnUtil;
 
 import java.util.List;
 
@@ -38,16 +44,32 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
     @Override
     public void onBindViewHolder(@NonNull SmallTargetViewHolder holder, int position) {
         SmallTargetBean bean = mSmallTargetList.get(position);
-        LogUtils.e("TAG", "---onBindViewHolder---" + bean.getUserName());
-        holder.tvName.setText(bean.getUserName());
-        holder.tvContent.setText(bean.getId() + "");
+        LogUtils.e("TAG", "---onBindViewHolder---" + bean.getTargetName());
+        holder.tvName.setText(bean.getTargetName());
+
+
+        String str = "已经完成目标" + bean.getFinishDay() + "天";
+        SpannableStringBuilder mSpannable = new SpannableStringBuilder(str);
+        ////mSpannable.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 4, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        mSpannable.setSpan(new ForegroundColorSpan(Color.RED), 6, 7, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        mSpannable.setSpan(new AbsoluteSizeSpan(UnitTurnUtil.dip2px(mContext, 14)), 6, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        holder.tvContent.setText(mSpannable);
+
         holder.ivIcon.setBackgroundResource(bean.getImgUrl());
+
+        boolean isLike = bean.isLike();
+        if (isLike){
+            holder.ivToDetail.setBackgroundResource(R.drawable.target_to_signin_select);
+        }else {
+            holder.ivToDetail.setBackgroundResource(R.drawable.target_to_signin);
+        }
 
         holder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, SignInActivity.class);
-                intent.putExtra("name", bean.getUserName());
+                intent.putExtra("name", bean.getTargetName());
+                intent.putExtra("id", bean.getId());
                 mContext.startActivity(intent);
             }
         });
