@@ -65,6 +65,7 @@ public class LiveBarFragment extends BaseFragment {
                 if ((keyCode == KeyEvent.KEYCODE_BACK) && mWebView.canGoBack()) {
                     if (event.getAction() == KeyEvent.ACTION_DOWN) { //只处理一次
                         handler.sendEmptyMessage(1);
+
                     }
                     return true;
                 }
