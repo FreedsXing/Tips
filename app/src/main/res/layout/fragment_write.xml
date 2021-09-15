@@ -6,7 +6,17 @@
     tools:context=".fragment.MapFragment">
 
 
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorMain"
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+    </TextView>
+
     <WebView
+        android:layout_marginTop="30dp"
         android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

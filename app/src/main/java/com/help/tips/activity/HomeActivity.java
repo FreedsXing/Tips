@@ -5,12 +5,13 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.help.tips.FifthFragment;
-import com.help.tips.FourthFragment;
-import com.help.tips.HomeFragment;
+import com.help.tips.fragment.FifthFragment;
+import com.help.tips.fragment.FourthFragment;
+import com.help.tips.fragment.HomeFragment;
 import com.help.tips.R;
-import com.help.tips.SecondFragment;
-import com.help.tips.ThirdFragment;
+import com.help.tips.fragment.SecondFragment;
+import com.help.tips.fragment.ThirdFragment;
+import com.help.tips.base.BaseActivity;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;

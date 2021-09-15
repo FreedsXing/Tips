@@ -10,26 +10,29 @@ import android.widget.TextView;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseActivity;
 import com.help.tips.bean.SmallTargetBean;
 
 import org.litepal.LitePal;
 
-import java.util.List;
+import butterknife.BindView;
 
 public class SignInActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "SignInActivity";
 
-    private ImageView ivBack;
-    private TextView tvTitle;
-    private TextView tvBtn;
-    private TextView tvBtn2;
-
-    private TextView tvTest;
-
+    @BindView(R.id.iv_back)
+    public ImageView ivBack;
+    @BindView(R.id.tv_title)
+    public TextView tvTitle;
+    @BindView(R.id.tv_btn)
+    public TextView tvBtn;
+    @BindView(R.id.tv_btn2)
+    public TextView tvBtn2;
+    @BindView(R.id.tv_test)
+    public TextView tvTest;
 
     private int mId;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +41,6 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
         LogUtils.e(getClass().getSimpleName());
 
-        ivBack = findViewById(R.id.iv_back);
-        tvTitle = findViewById(R.id.tv_title);
-
-        tvBtn = findViewById(R.id.tv_btn);
-        tvBtn2 = findViewById(R.id.tv_btn2);
-
-        tvTest = findViewById(R.id.tv_test);
-
-        findViewById(R.id.tv_test);
 
         Intent intent = getIntent();
         tvTitle.setText(intent.getStringExtra("name"));

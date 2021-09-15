@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.fragment;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -17,15 +17,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import butterknife.ButterKnife;
 
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.R;
+import com.help.tips.StepCountService;
+import com.help.tips.base.BaseFragment;
 
 import org.w3c.dom.Text;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ThirdFragment extends Fragment implements View.OnClickListener {
+public class ThirdFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "ThirdFragment";
 
@@ -83,6 +87,9 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_third, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
+
         LogUtils.e("TAG", TAG + "---onCreateView---");
 
         TextView tvTitle = mainView.findViewById(R.id.tv_title);
@@ -164,11 +171,14 @@ public class ThirdFragment extends Fragment implements View.OnClickListener {
         return mainView;
     }
 
+
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        LogUtils.e("TAG", TAG + "---onCreateView---");
+        //mBoxStore.close();
     }
+
 
 
     @Override

@@ -15,26 +15,22 @@ import android.view.ViewGroup;
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
 
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
-    protected int getLayoutId(){
-        return 0;
-    }
 
-    private Unbinder mUnbinder = null;
+    protected View mainView;
+    protected Unbinder mUnbinder = null;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        LogUtils.e("---" + getClass().getSimpleName() + "---onCreateView");
-
-        View view = null;
-        if (getLayoutId() != 0){
-            view = inflater.inflate(getLayoutId(), container, false);
-           mUnbinder = ButterKnife.bind(this, view);
-        }
-        return view;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        LogUtils.e("---" + getClass().getSimpleName() + "---onCreateView" + layoutId);
+//
+//        //View view = inflater.inflate(layoutId, container, false);
+//          // mUnbinder = ButterKnife.bind(this, view);
+//
+//        return view;
+//    }
 
     @Override
     public void onDestroyView() {

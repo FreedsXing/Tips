@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseActivity;
 import com.help.tips.fingerprint.FingerPrintDialog;
 import com.help.tips.fingerprint.FingerprintCore;
 import com.help.tips.fingerprint.FingerprintUtil;

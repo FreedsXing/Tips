@@ -15,7 +15,7 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.BaseActivity"
+            android:name=".base.BaseActivity"
             android:exported="true"
             android:launchMode="singleInstance" />
         <activity android:name=".activity.AboutUsActivity" />

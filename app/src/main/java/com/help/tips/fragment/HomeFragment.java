@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.help.tips.HomeFragmentPageAdapter;
+import com.help.tips.R;
 import com.help.tips.base.BaseFragment;
 import com.help.tips.fragment.MapFragment;
 import com.help.tips.fragment.LiveBarFragment;
@@ -22,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -31,7 +34,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "HomeFragment";
 
-    private View mainView;
 
     @BindView(R.id.tb_layout)
     TabLayout mTableLayout;
@@ -40,16 +42,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private  List<Fragment> mFragmentList = new ArrayList<>();
     private List<String> mTtileList = new ArrayList<>();
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_home;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_home, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
 
         mTableLayout = mainView.findViewById(R.id.tb_layout);
         mViewPager = mainView.findViewById(R.id.viewPager);
@@ -87,6 +87,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
         return mainView;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //mBoxStore.close();
+    }
+
 
     @Override
     public void onResume() {

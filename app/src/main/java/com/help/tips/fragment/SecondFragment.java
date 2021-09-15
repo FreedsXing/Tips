@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,17 +7,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import butterknife.ButterKnife;
 
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.R;
+import com.help.tips.base.BaseFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SecondFragment extends Fragment implements View.OnClickListener {
+public class SecondFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "SecondFragment";
-
-    private View mainView;
 
 
     @Override
@@ -25,6 +26,8 @@ public class SecondFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_second, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
 
         TextView tvTitle = mainView.findViewById(R.id.tv_title);
         tvTitle.setText("时间");

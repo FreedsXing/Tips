@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.freeds.toolutil.AppInforUtil;
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.R;
 import com.help.tips.activity.AboutUsActivity;
 import com.help.tips.activity.LoginActivity;
 import com.help.tips.base.BaseFragment;
@@ -23,10 +24,10 @@ import com.help.tips.util.SharedPreferencesUtil;
 
 import java.io.File;
 
+import butterknife.ButterKnife;
+
 
 public class FifthFragment extends BaseFragment implements View.OnClickListener {
-
-    private View mainView;
 
     private LinearLayout llTextSize;
     private LinearLayout llClearCache;
@@ -37,10 +38,13 @@ public class FifthFragment extends BaseFragment implements View.OnClickListener 
     private TextView tvCache;
     private TextView tvAppVersion;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_fifth, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
 
         TextView tvTitle = mainView.findViewById(R.id.tv_title);
         tvTitle.setText("我");

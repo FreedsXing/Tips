@@ -29,22 +29,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class SmallTargetFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "SmallTargetFragment";
 
-    private View mainView;
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_small_target;
-    }
 
     private Activity mActivity;
-
-
 
     private TextView tvAdd;
     private TextView tvDel;
@@ -67,6 +60,7 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         mainView = inflater.inflate(R.layout.fragment_small_target, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
 
         tvAdd = mainView.findViewById(R.id.tv_add);
         tvAdd.setOnClickListener(this);
@@ -293,15 +287,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
      */
     private void showTodayWeek() {
         String week = TimeUtil.dateToWeek(System.currentTimeMillis() + "");
-        tvMonday = mainView.findViewById(R.id.tv_monday);
-        tvTuesday = mainView.findViewById(R.id.tv_tuesday);
-        tvWednesday = mainView.findViewById(R.id.tv_wednesday);
-        tvThursday = mainView.findViewById(R.id.tv_thursday);
-        tvFriday = mainView.findViewById(R.id.tv_friday);
-        tvSaturaday = mainView.findViewById(R.id.tv_saturaday);
-        tvSunday = mainView.findViewById(R.id.tv_sunday);
-
-
 
         switch (week) {
             case "星期一":

@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseActivity;
 
 public class AboutUsActivity extends BaseActivity implements View.OnClickListener {
 

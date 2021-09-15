@@ -1,4 +1,4 @@
-package com.help.tips;
+package com.help.tips.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,17 +13,19 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import butterknife.ButterKnife;
 
 import com.freeds.toolutil.LogUtils;
+import com.help.tips.R;
+import com.help.tips.base.BaseFragment;
 
-public class FourthFragment extends Fragment implements View.OnClickListener {
+public class FourthFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "FourthFragment";
 
     private static  String ACTIVITY_PAGE = "https://huodong.weibo.cn/olympics2021/h5_medal?sinainternalbrowser=topnav&portrait_only=1&share_menu=1&disable_sinaurl=1&disable_gesture_back=1&topnavstyle=1";
 
     private WebView webView;
-    private View mainView;
 
     private Handler handler = new Handler() {
         @Override
@@ -42,6 +44,8 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_fourth, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
         webView = mainView.findViewById(R.id.web);
 
         TextView tvTitle = mainView.findViewById(R.id.tv_title);
@@ -79,6 +83,14 @@ public class FourthFragment extends Fragment implements View.OnClickListener {
 
         return mainView;
     }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //mBoxStore.close();
+    }
+
 
     @Override
     public void onClick(View v) {

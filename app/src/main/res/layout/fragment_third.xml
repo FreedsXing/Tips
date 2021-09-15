@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".ThirdFragment">
+    tools:context=".fragment.ThirdFragment">
 
     <include layout="@layout/layout_title_base"></include>
 

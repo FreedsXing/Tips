@@ -13,16 +13,17 @@ import android.webkit.WebViewClient;
 
 import com.freeds.toolutil.LogUtils;
 import com.help.tips.R;
+import com.help.tips.base.BaseFragment;
 
 import androidx.fragment.app.Fragment;
+import butterknife.ButterKnife;
 
 
-public class XitujuejinFragment extends Fragment {
+public class XitujuejinFragment extends BaseFragment {
 
 
     String mUrl = "https://juejin.cn/";
 
-    private View mainView;
     private WebView mWebView;
 
     private Handler handler = new Handler() {
@@ -41,6 +42,8 @@ public class XitujuejinFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mainView = inflater.inflate(R.layout.fragment_test4, container, false);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
 
         mWebView = mainView.findViewById(R.id.web);
 
@@ -73,4 +76,12 @@ public class XitujuejinFragment extends Fragment {
 
         return mainView;
     }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //mBoxStore.close();
+    }
+
 }

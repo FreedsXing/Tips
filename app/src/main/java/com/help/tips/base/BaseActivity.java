@@ -1,4 +1,4 @@
-package com.help.tips.activity;
+package com.help.tips.base;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

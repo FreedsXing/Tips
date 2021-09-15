@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import android.text.Editable;
 import android.text.TextUtils;
@@ -40,8 +41,6 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
 
     private static final String TAG = "MapFragment";
 
-    private View mainView;
-
     private MapView mMapView = null;
     @BindView(R.id.tv_normal)
     TextView tvNomal;
@@ -58,10 +57,6 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
     BaiduMapOptions options;
     PoiSearch poiSearch;
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_map;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +64,8 @@ public class MapFragment extends BaseFragment implements View.OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
 
         mainView = inflater.inflate(R.layout.fragment_map, container, false);
-        //mMapView = (MapView) view.findViewById(R.id.bmapView);
+        mUnbinder = ButterKnife.bind(this, mainView);
+
 
         LogUtils.e(TAG + "---onCreateView---");
 
