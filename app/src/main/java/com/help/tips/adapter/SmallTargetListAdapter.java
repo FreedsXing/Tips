@@ -13,11 +13,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
+import com.freeds.tool.util.UnitTurnUtil;
 import com.help.tips.R;
 import com.help.tips.activity.SignInActivity;
 import com.help.tips.bean.SmallTargetBean;
-import com.help.tips.util.UnitTurnUtil;
 
 import java.util.List;
 

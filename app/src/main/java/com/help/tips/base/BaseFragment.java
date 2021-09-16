@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 
 public abstract class BaseFragment extends Fragment {

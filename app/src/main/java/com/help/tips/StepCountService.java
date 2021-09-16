@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 
 /**
  * @author Administrator

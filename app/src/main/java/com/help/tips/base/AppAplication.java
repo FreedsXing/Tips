@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 
 import org.litepal.LitePal;
 

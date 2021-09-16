@@ -11,7 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 import com.help.tips.base.BaseFragment;
 

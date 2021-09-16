@@ -19,7 +19,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 import com.help.tips.StepCountService;
 import com.help.tips.base.BaseFragment;

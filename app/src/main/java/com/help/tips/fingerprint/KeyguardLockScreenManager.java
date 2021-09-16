@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 
 
 public class KeyguardLockScreenManager {

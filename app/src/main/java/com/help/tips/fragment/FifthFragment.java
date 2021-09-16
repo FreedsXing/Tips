@@ -13,8 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.freeds.toolutil.AppInforUtil;
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
+import com.freeds.tool.util.AppInforUtil;
 import com.help.tips.R;
 import com.help.tips.activity.AboutUsActivity;
 import com.help.tips.activity.LoginActivity;

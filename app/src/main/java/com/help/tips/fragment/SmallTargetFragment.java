@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 import com.help.tips.adapter.SmallTargetListAdapter;
 import com.help.tips.base.BaseFragment;

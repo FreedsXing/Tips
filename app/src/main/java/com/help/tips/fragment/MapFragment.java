@@ -30,7 +30,7 @@ import com.baidu.mapapi.search.poi.PoiIndoorInfo;
 import com.baidu.mapapi.search.poi.PoiIndoorResult;
 import com.baidu.mapapi.search.poi.PoiResult;
 import com.baidu.mapapi.search.poi.PoiSearch;
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 import com.help.tips.base.BaseFragment;
 

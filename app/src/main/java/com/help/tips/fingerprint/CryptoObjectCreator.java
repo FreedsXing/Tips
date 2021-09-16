@@ -8,7 +8,7 @@ import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
 import android.util.Log;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;

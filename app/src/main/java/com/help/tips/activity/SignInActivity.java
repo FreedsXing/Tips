@@ -8,7 +8,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.R;
 import com.help.tips.base.BaseActivity;
 import com.help.tips.bean.SmallTargetBean;

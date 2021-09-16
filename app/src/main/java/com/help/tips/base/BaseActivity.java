@@ -12,7 +12,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
-import com.freeds.toolutil.LogUtils;
+import com.freeds.tool.LogUtils;
 import com.help.tips.util.ActivityCollector;
 
 public class BaseActivity extends AppCompatActivity {
