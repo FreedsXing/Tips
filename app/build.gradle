@@ -9,6 +9,7 @@ buildProps.load(new FileInputStream(file(rootProject.file("version.properties"))
 Properties buildProps2 = new Properties();
 buildProps2.load(new FileInputStream(file(rootProject.file("config.properties"))))
 
+
 android {
     compileSdkVersion configs.compileSdkVersion
     buildToolsVersion configs.buildToolsVersion
@@ -90,21 +91,9 @@ dependencies {
 
     implementation 'com.orhanobut:logger:1.8'
 
+    //工具类
     implementation 'com.github.FreedsXing:FreedsUtil:1.1.0'
 
+    //SQLite的二次封装
     implementation 'org.litepal.guolindev:core:3.2.3'
-}
-
-
-this.getParentProject()
-def getParentProject() {
-    def name = this.getParent().name
-    println "this parent project name is: ${name}"
-}
-
-this.getRootPro()
-def getRootPro() {
-    def name = this.getRootProject().name
-    println "this root project name is: ${name}"
-    println "this is version = " + this.getGradle().gradleVersion
 }

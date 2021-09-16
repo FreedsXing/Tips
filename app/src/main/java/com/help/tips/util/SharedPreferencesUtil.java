@@ -69,6 +69,8 @@ public class SharedPreferencesUtil {
         sharedPreferences.edit().putString(key, value).commit();
     }
 
+
+
     /**
      * 读取String标识从sharedPreferences中
      *
@@ -102,6 +104,7 @@ public class SharedPreferencesUtil {
         }
         sharedPreferences.edit().putInt(key, value).commit();
     }
+
 
     /**
      * 读取int标识从sharedPreferences中

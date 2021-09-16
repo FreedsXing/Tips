@@ -2,7 +2,6 @@ package com.help.tips.util;
 
 public class ProcessManager {
 
-
     /**
      * 杀掉当前进程
      */

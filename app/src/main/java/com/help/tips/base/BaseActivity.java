@@ -17,7 +17,6 @@ import com.help.tips.util.ActivityCollector;
 
 public class BaseActivity extends AppCompatActivity {
 
-
     //全局绑定and解绑
     private Unbinder mUnbinder = null;
 
@@ -42,6 +41,9 @@ public class BaseActivity extends AppCompatActivity {
         LogUtils.e("---" + getClass().getSimpleName() + "---onDestroy");
         ActivityCollector.removeActivity(this);
     }
+
+
+
 
     @Override
     protected void onStart() {

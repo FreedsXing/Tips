@@ -12,7 +12,6 @@ buildscript {
 }
 
 
-//for the modules being built by Gradle
 allprojects {
     repositories {
         google()
@@ -21,17 +20,6 @@ allprojects {
     }
 }
 
-this.getRootPro();
-def getRootPro(){
-    def name = this.getRootProject().name;
-    println "this is project name = " + name
-}
-
-
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
 
 //定义模块共享变量
 ext {
@@ -55,28 +43,4 @@ ext {
     junit_version = "4.12"
 
     butter_knife_version = "10.2.3"
-
-}
-
-
-//打印 all project
-this.getProjects()
-def getProjects() {
-    println '--------------------------'
-    println 'Root Project'
-    println '--------------------------'
-    this.getAllprojects().eachWithIndex { Project project, int index ->
-        if(index == 0) {
-            println "Root project:'${project.name}'"
-        }else {
-            println "+---- project:'${project.name}'"
-        }
-    }
-
-    println '--------------------------'
-    println 'Sub Project'
-    println '--------------------------'
-    this.getSubprojects().eachWithIndex { Project project, int index ->
-        println "+---- project:'${project.name}'"
-    }
 }
