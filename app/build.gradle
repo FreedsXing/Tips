@@ -92,7 +92,7 @@ dependencies {
     implementation 'com.orhanobut:logger:1.8'
 
     //工具类
-    implementation 'com.github.FreedsXing:FreedsUtil:1.1.0'
+    implementation 'com.github.FreedsXing:FreedsUtil:1.1.2'
 
     //SQLite的二次封装
     implementation 'org.litepal.guolindev:core:3.2.3'

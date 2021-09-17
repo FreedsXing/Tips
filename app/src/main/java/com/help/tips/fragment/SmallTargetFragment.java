@@ -129,7 +129,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //mBoxStore.close();
     }
 
     @Override
@@ -139,7 +138,6 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
                 Toast.makeText(getActivity(), "增加用户", Toast.LENGTH_SHORT).show();
                 // mRecyclerView.notifyAll();
-
                 break;
             case R.id.tv_del:
 
