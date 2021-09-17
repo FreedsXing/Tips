@@ -79,7 +79,7 @@ public class SmallTargetFragment extends BaseFragment implements View.OnClickLis
 
         mRecyclerView = mainView.findViewById(R.id.recyclerView);
 
-        //SQLiteDatabase db = LitePal.getDatabase();
+        SQLiteDatabase db = LitePal.getDatabase();
 
         showTodayWeek();
 

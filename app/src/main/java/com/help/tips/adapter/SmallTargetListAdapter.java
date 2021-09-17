@@ -2,11 +2,6 @@ package com.help.tips.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -14,10 +9,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.freeds.tool.LogUtils;
-import com.freeds.tool.util.UnitTurnUtil;
 import com.help.tips.R;
 import com.help.tips.activity.SignInActivity;
 import com.help.tips.bean.SmallTargetBean;
+import com.help.tips.util.MultTextStyleTool;
 
 import java.util.List;
 
@@ -47,15 +42,17 @@ public class SmallTargetListAdapter extends RecyclerView.Adapter<SmallTargetList
         LogUtils.e("TAG", "---onBindViewHolder---" + bean.getTargetName());
         holder.tvName.setText(bean.getTargetName());
 
+        holder.ivIcon.setBackgroundResource(bean.getImgUrl());
+
 
         String str = "已经完成目标" + bean.getFinishDay() + "天";
-        SpannableStringBuilder mSpannable = new SpannableStringBuilder(str);
-        ////mSpannable.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 4, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        mSpannable.setSpan(new ForegroundColorSpan(Color.RED), 6, 7, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        mSpannable.setSpan(new AbsoluteSizeSpan(UnitTurnUtil.dip2px(mContext, 14)), 6, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-        holder.tvContent.setText(mSpannable);
+        MultTextStyleTool multText = new MultTextStyleTool(mContext, holder.tvContent, str);
+        multText.startIndex = 6;
+        multText.endIndex = 7;
+        multText.textSize = 18;
+        multText.textColor = R.color.colorMain;
+        multText.apply();
 
-        holder.ivIcon.setBackgroundResource(bean.getImgUrl());
 
         boolean isLike = bean.isLike();
         if (isLike){

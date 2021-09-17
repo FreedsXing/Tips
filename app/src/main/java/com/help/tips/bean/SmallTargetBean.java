@@ -17,12 +17,12 @@ public class SmallTargetBean extends LitePalSupport {
 
     private boolean isLike = true;
 
+    public void setImgUrl(int imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 
     public int getImgUrl() {
         return imgUrl;
-    }
-    public void setImgUrl(int imgUrl) {
-        this.imgUrl = imgUrl;
     }
 
     public int getId() {
