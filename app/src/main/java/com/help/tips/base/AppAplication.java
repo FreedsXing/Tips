@@ -2,12 +2,16 @@ package com.help.tips.base;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Build;
 
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.freeds.tool.LogUtils;
 
+import org.litepal.BuildConfig;
 import org.litepal.LitePal;
+
+
 
 /**
  * Created by Freeds on 2021/7/23 0023.
@@ -35,6 +39,5 @@ public class AppAplication extends Application {
         LogUtils.openLoging();
 
         LitePal.initialize(this);
-
     }
 }

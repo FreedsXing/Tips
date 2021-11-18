@@ -3,8 +3,11 @@ package com.help.tips.activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import com.freeds.tool.LogUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import com.help.tips.fragment.FifthFragment;
 import com.help.tips.fragment.FourthFragment;
 import com.help.tips.fragment.HomeFragment;
@@ -12,6 +15,7 @@ import com.help.tips.R;
 import com.help.tips.fragment.SecondFragment;
 import com.help.tips.fragment.ThirdFragment;
 import com.help.tips.base.BaseActivity;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
@@ -65,5 +69,6 @@ public class HomeActivity extends BaseActivity {
                 return true;
             }
         });
+
     }
 }

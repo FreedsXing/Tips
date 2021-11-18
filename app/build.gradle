@@ -68,6 +68,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
+
     implementation "androidx.appcompat:appcompat:$rootProject.ext.androidx_appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.androidx_constraintlayout_version"
     implementation "androidx.legacy:legacy-support-v4:$rootProject.ext.androidx_legacy_version"
